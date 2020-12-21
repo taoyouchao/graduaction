@@ -54,4 +54,7 @@ public class Teacher {
     @ApiModelProperty("学历")
     private String education;
 
+    @ApiModelProperty("老师剩余能发布的题目数量")
+    private Integer maxStu;
+
 }

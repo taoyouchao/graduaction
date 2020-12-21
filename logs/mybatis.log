@@ -11458,3 +11458,437 @@ java.lang.IllegalArgumentException: Invalid character found in method name [0x16
 [2020-12-22 03:05:49] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
 [2020-12-22 03:05:49] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
 [2020-12-22 03:05:49] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==>  Preparing: select search_id, search_type from search where design_id=?;
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==> Parameters: 1(Integer)
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- <==      Total: 1
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:06:24] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==>  Preparing: select search_id, search_type from search where design_id=?;
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==> Parameters: 1(Integer)
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- <==      Total: 1
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:06:31] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==>  Preparing: select search_id, search_type from search where design_id=?;
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==> Parameters: 1(Integer)
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- <==      Total: 1
+[2020-12-22 03:06:35] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:06:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:06:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:06:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:06:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:06:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:06:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:06:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:06:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:06:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:06:36] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:06:36] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:06:36] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==>  Preparing: select search_id, search_type from search where design_id=?;
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==> Parameters: 1(Integer)
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- <==      Total: 1
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:07:01] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==>  Preparing: select search_id, search_type from search where design_id=?;
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==> Parameters: 1(Integer)
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- <==      Total: 1
+[2020-12-22 03:07:24] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:07:25] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:07:25] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:25] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:25] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:07:25] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:25] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:25] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:07:25] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:07:25] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:07:25] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:07:25] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:07:25] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==>  Preparing: select search_id, search_type from search where design_id=?;
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==> Parameters: 1(Integer)
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- <==      Total: 1
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:07:36] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==>  Preparing: select search_id, search_type from search where design_id=?;
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==> Parameters: 1(Integer)
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- <==      Total: 1
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:07:42] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==>  Preparing: select search_id, search_type from search where design_id=?;
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==> Parameters: 1(Integer)
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- <==      Total: 1
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:07:55] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==>  Preparing: select search_id, search_type from search where design_id=?;
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==> Parameters: 1(Integer)
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- <==      Total: 1
+[2020-12-22 03:08:03] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:08:04] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:08:04] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:08:04] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:08:04] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:08:04] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:08:04] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:08:04] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:08:04] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:08:04] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:08:04] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:08:04] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:08:04] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==>  Preparing: select search_id, search_type from search where design_id=?;
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==> Parameters: 1(Integer)
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- <==      Total: 1
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:08:14] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:16:42] [INFO ] [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:?] -- Shutting down ExecutorService 'applicationTaskExecutor'
+[2020-12-22 03:16:42] [INFO ] [com.zaxxer.hikari.HikariDataSource:?] -- HikariPool-1 - Shutdown initiated...
+[2020-12-22 03:16:42] [INFO ] [com.zaxxer.hikari.HikariDataSource:?] -- HikariPool-1 - Shutdown completed.
+[2020-12-22 03:17:00] [INFO ] [com.xiaochao.SpringBootGraduation:?] -- Starting SpringBootGraduation on YLMF-2018GOHQEG with PID 15408 (E:\2020第一学期\graduation\target\classes started by Administrator in E:\2020第一学期\graduation)
+[2020-12-22 03:17:00] [INFO ] [com.xiaochao.SpringBootGraduation:?] -- The following profiles are active: dev
+[2020-12-22 03:17:03] [INFO ] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:?] -- Tomcat initialized with port(s): 8081 (http)
+[2020-12-22 03:17:03] [INFO ] [org.apache.catalina.core.StandardService:?] -- Starting service [Tomcat]
+[2020-12-22 03:17:03] [INFO ] [org.apache.catalina.core.StandardEngine:?] -- Starting Servlet engine: [Apache Tomcat/9.0.36]
+[2020-12-22 03:17:03] [INFO ] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:?] -- Initializing Spring embedded WebApplicationContext
+[2020-12-22 03:17:03] [INFO ] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:?] -- Root WebApplicationContext: initialization completed in 2971 ms
+[2020-12-22 03:17:05] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/css/**'], []
+[2020-12-22 03:17:05] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/fonts/**'], []
+[2020-12-22 03:17:05] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/img/**'], []
+[2020-12-22 03:17:05] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/js/**'], []
+[2020-12-22 03:17:05] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/static/**'], []
+[2020-12-22 03:17:05] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@41f964f9, org.springframework.security.web.context.SecurityContextPersistenceFilter@1815577b, org.springframework.security.web.header.HeaderWriterFilter@721bf7ad, org.springframework.security.web.authentication.logout.LogoutFilter@7523d5a1, com.xiaochao.filter.JwtAuthenticationTokenFilter@78d23d6a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@71369e1a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@39f42d0e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@652e345, org.springframework.security.web.session.SessionManagementFilter@639c7f9c, org.springframework.security.web.access.ExceptionTranslationFilter@5203c80f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@53cb0bcb]
+[2020-12-22 03:17:05] [INFO ] [springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping:?] -- Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[2020-12-22 03:17:05] [INFO ] [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:?] -- Initializing ExecutorService 'applicationTaskExecutor'
+[2020-12-22 03:17:05] [INFO ] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:?] -- Tomcat started on port(s): 8081 (http) with context path ''
+[2020-12-22 03:17:05] [INFO ] [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper:?] -- Context refreshed
+[2020-12-22 03:17:05] [INFO ] [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper:?] -- Found 1 custom documentation plugin(s)
+[2020-12-22 03:17:05] [INFO ] [springfox.documentation.spring.web.scanners.ApiListingReferenceScanner:?] -- Scanning for api listing references
+[2020-12-22 03:17:06] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: downLoadFileUsingGET_1
+[2020-12-22 03:17:06] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: getFileListInfoUsingGET_1
+[2020-12-22 03:17:06] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: getFileOtherUsingGET_1
+[2020-12-22 03:17:06] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: deleteTeacherUsingDELETE_1
+[2020-12-22 03:17:06] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: getTeachersByDesignIdUsingGET_1
+[2020-12-22 03:17:06] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: uploadExcelTeacherUsingPOST_1
+[2020-12-22 03:17:06] [INFO ] [com.xiaochao.SpringBootGraduation:?] -- Started SpringBootGraduation in 7.458 seconds (JVM running for 10.348)
+[2020-12-22 03:17:51] [INFO ] [org.apache.tomcat.util.http.parser.Cookie:?] -- A cookie header was received [designId":1,"designTitle":"2018级毕业设计","grade":"2018","designDes":null,"startTime":"2020-12-09T00:00:00.000+00:00","endTime":null,"college":{"collegeId":1,"collegeName":"应用技术"},"statue":false,"advising":0.3,"review":0.2,"replay":0.5,"userId":null}; designId=1; task={"taskId":6,"taskTitle":"中期报告","taskContent":"请务必提交","releaseTime":null,"endTime":"2021-01-21T06:35:04.000+00:00","taskType":"student","designId":null}; token=eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE2MDg1ODA4MjUsInN1YiI6InhjIiwiY3JlYXRlZCI6MTYwODU3NzIyNTE4OX0.vJD0UxIAtwTzbBNZ42Mdh9hHmPuI6UPMGiBdWqREann1_vrobsaibNSB5GLntlRsbO7JLTfcZIiJnYMuBxEwew; userInfo={"id":3,"username":"xc","nickName":"小超","password":"$2a$10$njUukwP3kVHaoqwlH0yYCOavTKdtnyGi6woAGLt03y0zKQ6SI0OVC","enabled":true,"phone":null,"email":null,"createTime":"2020-12-02T20:12:49.000+00:00","role":{"id":2,"roleName":"教师","roleCode":"teacher","roleDesc":"教师角色"},"major":{"majorId":1,"majorName":"软件工程","college":null},"design":null,"college":{"collegeId":1,"collegeName":"应用技术"}}] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+[2020-12-22 03:17:51] [INFO ] [org.apache.tomcat.util.http.parser.Cookie:?] -- A cookie header was received [designId":1,"designTitle":"2018级毕业设计","grade":"2018","designDes":null,"startTime":"2020-12-09T00:00:00.000+00:00","endTime":null,"college":{"collegeId":1,"collegeName":"应用技术"},"statue":false,"advising":0.3,"review":0.2,"replay":0.5,"userId":null}; designId=1; task={"taskId":6,"taskTitle":"中期报告","taskContent":"请务必提交","releaseTime":null,"endTime":"2021-01-21T06:35:04.000+00:00","taskType":"student","designId":null}; token=eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE2MDg1ODA4MjUsInN1YiI6InhjIiwiY3JlYXRlZCI6MTYwODU3NzIyNTE4OX0.vJD0UxIAtwTzbBNZ42Mdh9hHmPuI6UPMGiBdWqREann1_vrobsaibNSB5GLntlRsbO7JLTfcZIiJnYMuBxEwew; userInfo={"id":3,"username":"xc","nickName":"小超","password":"$2a$10$njUukwP3kVHaoqwlH0yYCOavTKdtnyGi6woAGLt03y0zKQ6SI0OVC","enabled":true,"phone":null,"email":null,"createTime":"2020-12-02T20:12:49.000+00:00","role":{"id":2,"roleName":"教师","roleCode":"teacher","roleDesc":"教师角色"},"major":{"majorId":1,"majorName":"软件工程","college":null},"design":null,"college":{"collegeId":1,"collegeName":"应用技术"}}] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+[2020-12-22 03:17:51] [INFO ] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:?] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-12-22 03:17:51] [INFO ] [org.springframework.web.servlet.DispatcherServlet:?] -- Initializing Servlet 'dispatcherServlet'
+[2020-12-22 03:17:51] [INFO ] [org.springframework.web.servlet.DispatcherServlet:?] -- Completed initialization in 13 ms
+[2020-12-22 03:17:53] [INFO ] [com.zaxxer.hikari.HikariDataSource:?] -- HikariPool-1 - Starting...
+[2020-12-22 03:17:54] [INFO ] [com.zaxxer.hikari.HikariDataSource:?] -- HikariPool-1 - Start completed.
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==>  Preparing: select search_id, search_type from search where design_id=?;
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- ==> Parameters: 1(Integer)
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.SearchDao.getAllSearch:?] -- <==      Total: 1
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: xc(String)
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: teacher(String)
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 20
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==>  Preparing: select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id, sh.search_id,sh.search_type, u.nick_name from subject sb,search sh,user u where sb.search_id=sh.search_id and sb.adviser_id=? and sb.design_id=?
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- ==> Parameters: 3(Integer), 1(Integer)
+[2020-12-22 03:17:54] [DEBUG] [com.xiaochao.dao.SubjectDao.getSubByAdviser:?] -- <==      Total: 330

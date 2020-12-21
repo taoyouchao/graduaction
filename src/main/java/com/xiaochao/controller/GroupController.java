@@ -2,6 +2,7 @@ package com.xiaochao.controller;
 
 import com.xiaochao.service.GroupService;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,6 +28,8 @@ public class GroupController {
     @ApiOperation("发起分组")
     @PostMapping("/groups")
     public Map<String,Object> createGroups(Integer designId) {
-        return null;
+
+        return groupService.createGroups(designId);
     }
+
 }

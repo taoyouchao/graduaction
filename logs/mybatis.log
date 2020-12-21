@@ -3,3 +3,339 @@
 [2020-12-21 10:32:21] [INFO ] [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:?] -- Shutting down ExecutorService 'applicationTaskExecutor'
 [2020-12-21 10:32:21] [INFO ] [com.zaxxer.hikari.HikariDataSource:?] -- HikariPool-1 - Shutdown initiated...
 [2020-12-21 10:32:21] [INFO ] [com.zaxxer.hikari.HikariDataSource:?] -- HikariPool-1 - Shutdown completed.
+[2020-12-21 21:40:20] [INFO ] [com.xiaochao.SpringBootGraduation:?] -- Starting SpringBootGraduation on LAPTOP-G8R0HANJ with PID 16496 (D:\javawork\graduate\graduaction\target\classes started by asus in D:\javawork\graduate\graduaction)
+[2020-12-21 21:40:20] [INFO ] [com.xiaochao.SpringBootGraduation:?] -- The following profiles are active: dev
+[2020-12-21 21:40:22] [INFO ] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:?] -- Tomcat initialized with port(s): 8081 (http)
+[2020-12-21 21:40:22] [INFO ] [org.apache.catalina.core.StandardService:?] -- Starting service [Tomcat]
+[2020-12-21 21:40:22] [INFO ] [org.apache.catalina.core.StandardEngine:?] -- Starting Servlet engine: [Apache Tomcat/9.0.36]
+[2020-12-21 21:40:23] [INFO ] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:?] -- Initializing Spring embedded WebApplicationContext
+[2020-12-21 21:40:23] [INFO ] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:?] -- Root WebApplicationContext: initialization completed in 2044 ms
+[2020-12-21 21:40:24] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/css/**'], []
+[2020-12-21 21:40:24] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/fonts/**'], []
+[2020-12-21 21:40:24] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/img/**'], []
+[2020-12-21 21:40:24] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/js/**'], []
+[2020-12-21 21:40:24] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/static/**'], []
+[2020-12-21 21:40:24] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f2d31af, org.springframework.security.web.context.SecurityContextPersistenceFilter@56f730b2, org.springframework.security.web.header.HeaderWriterFilter@17aa8a11, org.springframework.security.web.authentication.logout.LogoutFilter@4694f434, com.xiaochao.filter.JwtAuthenticationTokenFilter@1f7076bc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7930ffa9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2a39aa2b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2e7157c7, org.springframework.security.web.session.SessionManagementFilter@7ce85af2, org.springframework.security.web.access.ExceptionTranslationFilter@5377414a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6d2a2560]
+[2020-12-21 21:40:24] [INFO ] [springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping:?] -- Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[2020-12-21 21:40:24] [INFO ] [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:?] -- Initializing ExecutorService 'applicationTaskExecutor'
+[2020-12-21 21:40:24] [INFO ] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:?] -- Tomcat started on port(s): 8081 (http) with context path ''
+[2020-12-21 21:40:24] [INFO ] [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper:?] -- Context refreshed
+[2020-12-21 21:40:24] [INFO ] [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper:?] -- Found 1 custom documentation plugin(s)
+[2020-12-21 21:40:24] [INFO ] [springfox.documentation.spring.web.scanners.ApiListingReferenceScanner:?] -- Scanning for api listing references
+[2020-12-21 21:40:24] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: downLoadFileUsingGET_1
+[2020-12-21 21:40:24] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: getFileListInfoUsingGET_1
+[2020-12-21 21:40:24] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: getFileOtherUsingGET_1
+[2020-12-21 21:40:24] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: deleteTeacherUsingDELETE_1
+[2020-12-21 21:40:24] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: getTeachersByDesignIdUsingGET_1
+[2020-12-21 21:40:24] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: uploadExcelTeacherUsingPOST_1
+[2020-12-21 21:40:24] [INFO ] [com.xiaochao.SpringBootGraduation:?] -- Started SpringBootGraduation in 4.83 seconds (JVM running for 6.251)
+[2020-12-21 21:41:30] [INFO ] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:?] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-12-21 21:41:30] [INFO ] [org.springframework.web.servlet.DispatcherServlet:?] -- Initializing Servlet 'dispatcherServlet'
+[2020-12-21 21:41:30] [INFO ] [org.springframework.web.servlet.DispatcherServlet:?] -- Completed initialization in 8 ms
+[2020-12-21 21:48:24] [INFO ] [com.xiaochao.SpringBootGraduation:?] -- Starting SpringBootGraduation on LAPTOP-G8R0HANJ with PID 8412 (D:\javawork\graduate\graduaction\target\classes started by asus in D:\javawork\graduate\graduaction)
+[2020-12-21 21:48:24] [INFO ] [com.xiaochao.SpringBootGraduation:?] -- The following profiles are active: dev
+[2020-12-21 21:48:27] [INFO ] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:?] -- Tomcat initialized with port(s): 8089 (http)
+[2020-12-21 21:48:27] [INFO ] [org.apache.catalina.core.StandardService:?] -- Starting service [Tomcat]
+[2020-12-21 21:48:27] [INFO ] [org.apache.catalina.core.StandardEngine:?] -- Starting Servlet engine: [Apache Tomcat/9.0.36]
+[2020-12-21 21:48:27] [INFO ] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:?] -- Initializing Spring embedded WebApplicationContext
+[2020-12-21 21:48:27] [INFO ] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:?] -- Root WebApplicationContext: initialization completed in 2669 ms
+[2020-12-21 21:48:29] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/css/**'], []
+[2020-12-21 21:48:29] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/fonts/**'], []
+[2020-12-21 21:48:29] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/img/**'], []
+[2020-12-21 21:48:29] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/js/**'], []
+[2020-12-21 21:48:29] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/static/**'], []
+[2020-12-21 21:48:29] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@34a2d6e0, org.springframework.security.web.context.SecurityContextPersistenceFilter@60dd0587, org.springframework.security.web.header.HeaderWriterFilter@5d4e13e1, org.springframework.security.web.authentication.logout.LogoutFilter@235d659c, com.xiaochao.filter.JwtAuthenticationTokenFilter@660f0c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@221a2068, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4f8d86e4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2525a5b8, org.springframework.security.web.session.SessionManagementFilter@3b1dc579, org.springframework.security.web.access.ExceptionTranslationFilter@7e9f2c32, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@118dcbbd]
+[2020-12-21 21:48:29] [INFO ] [springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping:?] -- Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[2020-12-21 21:48:29] [INFO ] [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:?] -- Initializing ExecutorService 'applicationTaskExecutor'
+[2020-12-21 21:48:29] [INFO ] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:?] -- Tomcat started on port(s): 8089 (http) with context path ''
+[2020-12-21 21:48:29] [INFO ] [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper:?] -- Context refreshed
+[2020-12-21 21:48:29] [INFO ] [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper:?] -- Found 1 custom documentation plugin(s)
+[2020-12-21 21:48:29] [INFO ] [springfox.documentation.spring.web.scanners.ApiListingReferenceScanner:?] -- Scanning for api listing references
+[2020-12-21 21:48:29] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: downLoadFileUsingGET_1
+[2020-12-21 21:48:29] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: getFileListInfoUsingGET_1
+[2020-12-21 21:48:29] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: getFileOtherUsingGET_1
+[2020-12-21 21:48:29] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: deleteTeacherUsingDELETE_1
+[2020-12-21 21:48:29] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: getTeachersByDesignIdUsingGET_1
+[2020-12-21 21:48:29] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: uploadExcelTeacherUsingPOST_1
+[2020-12-21 21:48:29] [INFO ] [com.xiaochao.SpringBootGraduation:?] -- Started SpringBootGraduation in 6.099 seconds (JVM running for 8.226)
+[2020-12-21 21:48:37] [INFO ] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:?] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-12-21 21:48:37] [INFO ] [org.springframework.web.servlet.DispatcherServlet:?] -- Initializing Servlet 'dispatcherServlet'
+[2020-12-21 21:48:37] [INFO ] [org.springframework.web.servlet.DispatcherServlet:?] -- Completed initialization in 8 ms
+[2020-12-21 21:48:37] [INFO ] [com.zaxxer.hikari.HikariDataSource:?] -- HikariPool-1 - Starting...
+[2020-12-21 21:48:38] [INFO ] [com.zaxxer.hikari.HikariDataSource:?] -- HikariPool-1 - Start completed.
+[2020-12-21 21:48:38] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-21 21:48:38] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:48:38] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-21 21:48:38] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-21 21:48:38] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:48:38] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-21 21:48:38] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-21 21:48:38] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: admin(String)
+[2020-12-21 21:48:38] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 27
+[2020-12-21 21:48:44] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-21 21:48:44] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:48:44] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-21 21:48:44] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-21 21:48:44] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:48:44] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-21 21:48:44] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-21 21:48:44] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: admin(String)
+[2020-12-21 21:48:44] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 27
+[2020-12-21 21:48:52] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-21 21:48:52] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:48:52] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-21 21:48:52] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-21 21:48:52] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:48:52] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-21 21:48:52] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-21 21:48:52] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: admin(String)
+[2020-12-21 21:48:52] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 27
+[2020-12-21 21:49:08] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-21 21:49:08] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:49:08] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-21 21:49:08] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-21 21:49:08] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:49:08] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-21 21:49:08] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-21 21:49:08] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: admin(String)
+[2020-12-21 21:49:08] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 27
+[2020-12-21 21:49:46] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-21 21:49:46] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:49:46] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-21 21:49:46] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-21 21:49:46] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:49:46] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-21 21:49:46] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-21 21:49:46] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: admin(String)
+[2020-12-21 21:49:46] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 27
+[2020-12-21 21:49:46] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-21 21:49:46] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:49:46] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-21 21:49:46] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-21 21:49:46] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:49:46] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-21 21:49:46] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-21 21:49:46] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: admin(String)
+[2020-12-21 21:49:46] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 27
+[2020-12-21 21:51:06] [INFO ] [com.xiaochao.SpringBootGraduation:?] -- Starting SpringBootGraduation on LAPTOP-G8R0HANJ with PID 19540 (D:\javawork\graduate\graduaction\target\classes started by asus in D:\javawork\graduate\graduaction)
+[2020-12-21 21:51:06] [INFO ] [com.xiaochao.SpringBootGraduation:?] -- The following profiles are active: dev
+[2020-12-21 21:51:08] [INFO ] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:?] -- Tomcat initialized with port(s): 8089 (http)
+[2020-12-21 21:51:08] [INFO ] [org.apache.catalina.core.StandardService:?] -- Starting service [Tomcat]
+[2020-12-21 21:51:08] [INFO ] [org.apache.catalina.core.StandardEngine:?] -- Starting Servlet engine: [Apache Tomcat/9.0.36]
+[2020-12-21 21:51:08] [INFO ] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:?] -- Initializing Spring embedded WebApplicationContext
+[2020-12-21 21:51:08] [INFO ] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:?] -- Root WebApplicationContext: initialization completed in 1424 ms
+[2020-12-21 21:51:09] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/css/**'], []
+[2020-12-21 21:51:09] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/fonts/**'], []
+[2020-12-21 21:51:09] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/img/**'], []
+[2020-12-21 21:51:09] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/js/**'], []
+[2020-12-21 21:51:09] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/static/**'], []
+[2020-12-21 21:51:09] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e26173, org.springframework.security.web.context.SecurityContextPersistenceFilter@62b93086, org.springframework.security.web.header.HeaderWriterFilter@56f730b2, org.springframework.security.web.authentication.logout.LogoutFilter@777d191f, com.xiaochao.filter.JwtAuthenticationTokenFilter@34d52ecd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4e642ee1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@19e0dffe, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@27be17c8, org.springframework.security.web.session.SessionManagementFilter@2489e84a, org.springframework.security.web.access.ExceptionTranslationFilter@7ce85af2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@25f723b0]
+[2020-12-21 21:51:09] [INFO ] [springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping:?] -- Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[2020-12-21 21:51:09] [INFO ] [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:?] -- Initializing ExecutorService 'applicationTaskExecutor'
+[2020-12-21 21:51:09] [INFO ] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:?] -- Tomcat started on port(s): 8089 (http) with context path ''
+[2020-12-21 21:51:09] [INFO ] [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper:?] -- Context refreshed
+[2020-12-21 21:51:09] [INFO ] [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper:?] -- Found 1 custom documentation plugin(s)
+[2020-12-21 21:51:09] [INFO ] [springfox.documentation.spring.web.scanners.ApiListingReferenceScanner:?] -- Scanning for api listing references
+[2020-12-21 21:51:09] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: downLoadFileUsingGET_1
+[2020-12-21 21:51:09] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: getFileListInfoUsingGET_1
+[2020-12-21 21:51:09] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: getFileOtherUsingGET_1
+[2020-12-21 21:51:09] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: deleteTeacherUsingDELETE_1
+[2020-12-21 21:51:09] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: getTeachersByDesignIdUsingGET_1
+[2020-12-21 21:51:09] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: uploadExcelTeacherUsingPOST_1
+[2020-12-21 21:51:09] [INFO ] [com.xiaochao.SpringBootGraduation:?] -- Started SpringBootGraduation in 3.29 seconds (JVM running for 4.254)
+[2020-12-21 21:51:27] [INFO ] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:?] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-12-21 21:51:27] [INFO ] [org.springframework.web.servlet.DispatcherServlet:?] -- Initializing Servlet 'dispatcherServlet'
+[2020-12-21 21:51:27] [INFO ] [org.springframework.web.servlet.DispatcherServlet:?] -- Completed initialization in 6 ms
+[2020-12-21 21:54:02] [INFO ] [com.zaxxer.hikari.HikariDataSource:?] -- HikariPool-1 - Starting...
+[2020-12-21 21:54:03] [INFO ] [com.zaxxer.hikari.HikariDataSource:?] -- HikariPool-1 - Start completed.
+[2020-12-21 21:54:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-21 21:54:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:54:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-21 21:54:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-21 21:54:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:54:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-21 21:54:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-21 21:54:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: admin(String)
+[2020-12-21 21:54:03] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 27
+[2020-12-21 21:54:15] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-21 21:54:15] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:54:15] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-21 21:54:15] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-21 21:54:15] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:54:15] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-21 21:54:15] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-21 21:54:15] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: admin(String)
+[2020-12-21 21:54:15] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 27
+[2020-12-21 21:55:47] [INFO ] [com.xiaochao.SpringBootGraduation:?] -- Starting SpringBootGraduation on LAPTOP-G8R0HANJ with PID 15708 (D:\javawork\graduate\graduaction\target\classes started by asus in D:\javawork\graduate\graduaction)
+[2020-12-21 21:55:47] [INFO ] [com.xiaochao.SpringBootGraduation:?] -- The following profiles are active: dev
+[2020-12-21 21:55:49] [INFO ] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:?] -- Tomcat initialized with port(s): 8089 (http)
+[2020-12-21 21:55:49] [INFO ] [org.apache.catalina.core.StandardService:?] -- Starting service [Tomcat]
+[2020-12-21 21:55:49] [INFO ] [org.apache.catalina.core.StandardEngine:?] -- Starting Servlet engine: [Apache Tomcat/9.0.36]
+[2020-12-21 21:55:49] [INFO ] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:?] -- Initializing Spring embedded WebApplicationContext
+[2020-12-21 21:55:49] [INFO ] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:?] -- Root WebApplicationContext: initialization completed in 1342 ms
+[2020-12-21 21:55:49] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/css/**'], []
+[2020-12-21 21:55:49] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/fonts/**'], []
+[2020-12-21 21:55:49] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/img/**'], []
+[2020-12-21 21:55:49] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/js/**'], []
+[2020-12-21 21:55:49] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/static/**'], []
+[2020-12-21 21:55:49] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@72503b19, org.springframework.security.web.context.SecurityContextPersistenceFilter@3134153d, org.springframework.security.web.header.HeaderWriterFilter@338766de, org.springframework.security.web.authentication.logout.LogoutFilter@1220ef43, com.xiaochao.filter.JwtAuthenticationTokenFilter@1e58512c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f5effb0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@58c1da09, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1cfc2538, org.springframework.security.web.session.SessionManagementFilter@1697f2b3, org.springframework.security.web.access.ExceptionTranslationFilter@77f905e3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2c991465]
+[2020-12-21 21:55:49] [INFO ] [springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping:?] -- Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[2020-12-21 21:55:49] [INFO ] [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:?] -- Initializing ExecutorService 'applicationTaskExecutor'
+[2020-12-21 21:55:50] [INFO ] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:?] -- Tomcat started on port(s): 8089 (http) with context path ''
+[2020-12-21 21:55:50] [INFO ] [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper:?] -- Context refreshed
+[2020-12-21 21:55:50] [INFO ] [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper:?] -- Found 1 custom documentation plugin(s)
+[2020-12-21 21:55:50] [INFO ] [springfox.documentation.spring.web.scanners.ApiListingReferenceScanner:?] -- Scanning for api listing references
+[2020-12-21 21:55:50] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: downLoadFileUsingGET_1
+[2020-12-21 21:55:50] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: getFileListInfoUsingGET_1
+[2020-12-21 21:55:50] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: getFileOtherUsingGET_1
+[2020-12-21 21:55:50] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: deleteTeacherUsingDELETE_1
+[2020-12-21 21:55:50] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: getTeachersByDesignIdUsingGET_1
+[2020-12-21 21:55:50] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: uploadExcelTeacherUsingPOST_1
+[2020-12-21 21:55:50] [INFO ] [com.xiaochao.SpringBootGraduation:?] -- Started SpringBootGraduation in 3.201 seconds (JVM running for 4.166)
+[2020-12-21 21:55:55] [INFO ] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:?] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-12-21 21:55:55] [INFO ] [org.springframework.web.servlet.DispatcherServlet:?] -- Initializing Servlet 'dispatcherServlet'
+[2020-12-21 21:55:55] [INFO ] [org.springframework.web.servlet.DispatcherServlet:?] -- Completed initialization in 5 ms
+[2020-12-21 21:55:56] [INFO ] [com.zaxxer.hikari.HikariDataSource:?] -- HikariPool-1 - Starting...
+[2020-12-21 21:55:56] [INFO ] [com.zaxxer.hikari.HikariDataSource:?] -- HikariPool-1 - Start completed.
+[2020-12-21 21:55:56] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-21 21:55:56] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:55:56] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-21 21:55:56] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-21 21:55:56] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:55:56] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-21 21:55:56] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-21 21:55:56] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: admin(String)
+[2020-12-21 21:55:56] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 27
+[2020-12-21 21:57:23] [INFO ] [com.xiaochao.SpringBootGraduation:?] -- Starting SpringBootGraduation on LAPTOP-G8R0HANJ with PID 19360 (D:\javawork\graduate\graduaction\target\classes started by asus in D:\javawork\graduate\graduaction)
+[2020-12-21 21:57:23] [INFO ] [com.xiaochao.SpringBootGraduation:?] -- The following profiles are active: dev
+[2020-12-21 21:57:25] [INFO ] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:?] -- Tomcat initialized with port(s): 8089 (http)
+[2020-12-21 21:57:25] [INFO ] [org.apache.catalina.core.StandardService:?] -- Starting service [Tomcat]
+[2020-12-21 21:57:25] [INFO ] [org.apache.catalina.core.StandardEngine:?] -- Starting Servlet engine: [Apache Tomcat/9.0.36]
+[2020-12-21 21:57:25] [INFO ] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:?] -- Initializing Spring embedded WebApplicationContext
+[2020-12-21 21:57:25] [INFO ] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:?] -- Root WebApplicationContext: initialization completed in 1282 ms
+[2020-12-21 21:57:26] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/css/**'], []
+[2020-12-21 21:57:26] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/fonts/**'], []
+[2020-12-21 21:57:26] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/img/**'], []
+[2020-12-21 21:57:26] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/js/**'], []
+[2020-12-21 21:57:26] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: Ant [pattern='/static/**'], []
+[2020-12-21 21:57:26] [INFO ] [org.springframework.security.web.DefaultSecurityFilterChain:?] -- Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d0cac1f, org.springframework.security.web.context.SecurityContextPersistenceFilter@36920bd6, org.springframework.security.web.header.HeaderWriterFilter@66deec87, org.springframework.security.web.authentication.logout.LogoutFilter@43d3aba5, com.xiaochao.filter.JwtAuthenticationTokenFilter@79b84841, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6bee793f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a90c13c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3e8b3b79, org.springframework.security.web.session.SessionManagementFilter@6bcc3f27, org.springframework.security.web.access.ExceptionTranslationFilter@72503b19, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@60c1663c]
+[2020-12-21 21:57:26] [INFO ] [springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping:?] -- Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+[2020-12-21 21:57:26] [INFO ] [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:?] -- Initializing ExecutorService 'applicationTaskExecutor'
+[2020-12-21 21:57:26] [INFO ] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer:?] -- Tomcat started on port(s): 8089 (http) with context path ''
+[2020-12-21 21:57:26] [INFO ] [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper:?] -- Context refreshed
+[2020-12-21 21:57:26] [INFO ] [springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper:?] -- Found 1 custom documentation plugin(s)
+[2020-12-21 21:57:26] [INFO ] [springfox.documentation.spring.web.scanners.ApiListingReferenceScanner:?] -- Scanning for api listing references
+[2020-12-21 21:57:26] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: downLoadFileUsingGET_1
+[2020-12-21 21:57:26] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: getFileListInfoUsingGET_1
+[2020-12-21 21:57:26] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: getFileOtherUsingGET_1
+[2020-12-21 21:57:26] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: deleteTeacherUsingDELETE_1
+[2020-12-21 21:57:26] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: getTeachersByDesignIdUsingGET_1
+[2020-12-21 21:57:26] [INFO ] [springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator:?] -- Generating unique operation named: uploadExcelTeacherUsingPOST_1
+[2020-12-21 21:57:26] [INFO ] [com.xiaochao.SpringBootGraduation:?] -- Started SpringBootGraduation in 3.058 seconds (JVM running for 4.015)
+[2020-12-21 21:57:29] [INFO ] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:?] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-12-21 21:57:29] [INFO ] [org.springframework.web.servlet.DispatcherServlet:?] -- Initializing Servlet 'dispatcherServlet'
+[2020-12-21 21:57:29] [INFO ] [org.springframework.web.servlet.DispatcherServlet:?] -- Completed initialization in 7 ms
+[2020-12-21 21:57:29] [INFO ] [com.zaxxer.hikari.HikariDataSource:?] -- HikariPool-1 - Starting...
+[2020-12-21 21:57:29] [INFO ] [com.zaxxer.hikari.HikariDataSource:?] -- HikariPool-1 - Start completed.
+[2020-12-21 21:57:29] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==>  Preparing: SELECT username,`password`,enabled FROM `user` u WHERE u.username = ?
+[2020-12-21 21:57:29] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:57:29] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findByUserName:?] -- <==      Total: 1
+[2020-12-21 21:57:29] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==>  Preparing: SELECT role_code FROM role r LEFT JOIN user_role ur ON r.id=ur.role_id LEFT JOIN `user` u ON u.id=ur.user_id WHERE u.username= ?
+[2020-12-21 21:57:29] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- ==> Parameters: cdq(String)
+[2020-12-21 21:57:29] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findRoleByUserName:?] -- <==      Total: 1
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==>  Preparing: SELECT url FROM menu m LEFT JOIN role_menu rm ON m.id=rm.menu_id LEFT JOIN role r ON r.id=rm.role_id WHERE r.role_code IN ( ? )
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- ==> Parameters: admin(String)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.MyUserDetailServiceMapper.findAuthorByRoleCodes:?] -- <==      Total: 28
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 26(Long), 3(Integer)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 27(Long), 3(Integer)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 28(Long), 3(Integer)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 29(Long), 3(Integer)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 30(Long), 3(Integer)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 31(Long), 3(Integer)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 32(Long), 3(Integer)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 33(Long), 3(Integer)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 34(Long), 3(Integer)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 35(Long), 3(Integer)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 36(Long), 3(Integer)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 37(Long), 3(Integer)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 38(Long), 3(Integer)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 39(Long), 3(Integer)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 40(Long), 3(Integer)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 41(Long), 3(Integer)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 42(Long), 3(Integer)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 43(Long), 3(Integer)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:30] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 44(Long), 3(Integer)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 45(Long), 3(Integer)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 46(Long), 3(Integer)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 47(Long), 3(Integer)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 48(Long), 3(Integer)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 49(Long), 3(Integer)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 50(Long), 3(Integer)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 51(Long), 3(Integer)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 52(Long), 3(Integer)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 53(Long), 3(Integer)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 54(Long), 3(Integer)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 55(Long), 3(Integer)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==>  Preparing: insert into user_role(user_id, role_id) values (?, ?)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- ==> Parameters: 56(Long), 3(Integer)
+[2020-12-21 21:57:31] [DEBUG] [com.xiaochao.dao.GroupDao.insertTest:?] -- <==    Updates: 1

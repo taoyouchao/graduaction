@@ -2,7 +2,11 @@ package com.xiaochao.dao;
 
 import com.xiaochao.modal.Search;
 import com.xiaochao.vo.VoAdviser;
+import com.xiaochao.vo.VoStudent;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface GroupDao {
@@ -34,5 +38,13 @@ public interface GroupDao {
      * @return 学生的指定教师
      */
     VoAdviser getTeacherBysId(Integer studentId);
+
+    /**
+     * 获取参与答辩的所有学生
+     *
+     * @param designId 毕设ID
+     * @return 所有答辩学生
+     */
+    List<VoStudent> GetAllStudent(Integer designId);
 
 }

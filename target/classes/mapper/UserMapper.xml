@@ -16,12 +16,12 @@
             <result property="roleDesc" column="role_desc"/>
         </association>
         <association property="major" javaType="com.xiaochao.modal.Major">
-            <id property="majorId" column=""/>
-            <result property="majorName" column=""/>
+            <id property="majorId" column="major_id"/>
+            <result property="majorName" column="major_name"/>
         </association>
         <association property="college" javaType="com.xiaochao.modal.College">
-            <id property="collegeId" column=""/>
-            <result property="collegeName" column=""/>
+            <id property="collegeId" column="dept_id"/>
+            <result property="collegeName" column="dept_name"/>
         </association>
     </resultMap>
 

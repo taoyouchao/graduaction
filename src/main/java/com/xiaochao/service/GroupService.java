@@ -77,11 +77,11 @@ public class GroupService {
         int nMinGroupStudent = 5;
         // 1. 获取所有数据
         // 1.1 获取 nStudent
-        List<VoStudent> students = new ArrayList<>();
+        List<VoStudent> students = groupDao.GetAllStudent(designId);
         // 模拟随便添加几个学生
-        for (int i = 0; i < 200; i++) {
-            students.add(new VoStudent());
-        }
+//        for (int i = 0; i < 200; i++) {
+//            students.add(new VoStudent());
+//        }
 
         int nStudent = students.size();
 
@@ -91,10 +91,6 @@ public class GroupService {
 
         // 1.3
         List<Search> searches = searchService.getAllSearch(designId);
-
-
-        // 已经分配好的老师
-        int totalTeacher = 0;
 
         LinkedList<Group> groups = new LinkedList<>();
 
@@ -240,5 +236,7 @@ public class GroupService {
             System.out.println("该老师： " + t.toString() + "无法分配");
         }
     }
+    
+
 
 }

@@ -3,6 +3,7 @@ package com.xiaochao.service;
 import com.xiaochao.dao.GroupDao;
 import com.xiaochao.modal.Group;
 import com.xiaochao.modal.Search;
+import com.xiaochao.modal.Subject;
 import com.xiaochao.modal.Teacher;
 import com.xiaochao.utils.ResultMap;
 import com.xiaochao.vo.VoAdviser;
@@ -10,10 +11,7 @@ import com.xiaochao.vo.VoStudent;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @ClassName GroupService
@@ -29,10 +27,10 @@ public class GroupService {
     private GroupDao groupDao;
 
     @Resource
-    private TeacherService teacherService;
+    private SearchService searchService;
 
     @Resource
-    private SearchService searchService;
+    private SubjectService subjectService;
 
     public int countGroup(Integer designId) {
 
@@ -77,16 +75,13 @@ public class GroupService {
         int nMinGroupStudent = 5;
         // 1. 获取所有数据
         // 1.1 获取 nStudent
-        List<VoStudent> students = groupDao.GetAllStudent(designId);
-        // 模拟随便添加几个学生
-//        for (int i = 0; i < 200; i++) {
-//            students.add(new VoStudent());
-//        }
+        List<VoStudent> students = groupDao.getAllStudent(designId);
+
 
         int nStudent = students.size();
 
         // 1.2
-        List<Teacher> teachers = teacherService.getTeachersByDesignId(designId);
+        List<Teacher> teachers = groupDao.getTeachersByDesignId(designId);
         int nTeacher = teachers.size();
 
         // 1.3
@@ -143,6 +138,7 @@ public class GroupService {
 
         // 获取 该学生的研究 方向
         Search search = groupDao.getSearchBysId(s.getId());
+        // 获取该学生的指导老师
         VoAdviser t = groupDao.getTeacherBysId(s.getId());
 
         List<VoStudent> studentList = new ArrayList<>();
@@ -236,7 +232,74 @@ public class GroupService {
             System.out.println("该老师： " + t.toString() + "无法分配");
         }
     }
-    
 
+    /**
+     * 模拟自动选题
+     *
+     */
+    public void autoSelect(Integer designId) {
+
+        // 1. 获取所有老师
+        List<Teacher> teachers = groupDao.getTeachersByDesignId(designId);
+        List<Search> searches = searchService.getAllSearch(designId);
+
+        List<VoStudent> students = groupDao.getAllStudent(designId);
+        System.out.println("student的数目: " + students.size());
+        int totalSubject = students.size();
+        System.out.println("total: " + totalSubject);
+        int currentSubject = 0;
+
+        int ratio = 0;
+        System.out.println(teachers);
+        while (currentSubject < totalSubject) {
+            // 如果 老师题目数不够
+            System.out.println("老师已经出完题了： " + teachers);
+
+            for (Teacher teacher : teachers) {
+                // 随机选择一个研究方向
+                int sRandomIndex = new Random().nextInt(searches.size());
+                // 获取该老师 还可以 出几道题
+                Integer maxStu = teacher.getMaxStu();
+                if(maxStu == null) {
+                    continue;
+                }
+                int total = maxStu;
+
+
+                System.out.println("该教师：" + teacher.toString() + maxStu);
+                //
+                int current = groupDao.getTeacherSubject(teacher.getId());
+                // 随机生成total - current道题
+                for (int i = 1; i <= total - current + ratio ; i++) {
+                    subjectService.insertSubject(new Subject(null, teacher.getId().intValue(), null,   "题目" + teacher.getId()+ ""+ i, searches.get(sRandomIndex),
+                            "测试题目",  1, designId, true, null));
+                }
+                currentSubject += total - current + ratio;
+                System.out.println("currentSubject : " + currentSubject);
+                System.out.println("total: " + total);
+            }
+
+            ratio += 10;
+
+        }
+
+         // 获取所有题目 ID
+        List<Integer> ids = groupDao.subjectIds(designId);
+        System.out.println("题目的数目: " + ids.size());
+        if(totalSubject > ids.size()) {
+            throw new ArithmeticException("题目根本不够，cdq 加题！");
+        }
+
+        Collections.shuffle(ids);
+        int index = 0;
+        for (VoStudent student : students) {
+            // 随便选一道题
+            groupDao.updSubBy(student.getId().longValue(), ids.get(index));
+            index ++;
+
+        }
+
+
+    }
 
 }

@@ -30,8 +30,30 @@
     </select>
 
 <!--获取所有参加答辩的学生-->
-    <select id="GetAllStudent" parameterType="com.xiaochao.vo.VoStudent">
+    <select id="getAllStudent" resultType="com.xiaochao.vo.VoStudent" parameterType="int">
         select u.id, u.username, u.nick_name from user u where u.id in (
         select ur.user_id from user_role ur where ur.role_id = 3) and u.enabled = 1 and u.design_id = #{designId};
+    </select>
+
+    <select id="getTeacherSubject" resultType="int" parameterType="long">
+        select count(*) from `subject` s where s.adviser_id = #{teacherId}
+    </select>
+
+    <select id="subjectIds" resultType="int" parameterType="int">
+        select s.subject_id from `subject` s where s.design_id = #{designId};
+    </select>
+
+    <update id="updSubBy" >
+        update `subject` set student_id = #{studentId} where subject_id = #{subjectId}
+    </update>
+
+    <resultMap id="TeacherMap" type="com.xiaochao.modal.Teacher">
+        <result column="id" property="id" />
+        <result column="max_stu" property="maxStu"/>
+    </resultMap>
+
+    <select id="getTeachersByDesignId" resultMap="TeacherMap" parameterType="int">
+        select u.id, u.max_stu from user u WHERE u.id in
+        (select ur.user_id from user_role ur WHERE ur.role_id = 2) and u.design_id = #{designId} and u.max_stu is not NULL
     </select>
 </mapper>

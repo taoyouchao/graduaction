@@ -1,6 +1,7 @@
 package com.xiaochao.dao;
 
 import com.xiaochao.modal.Search;
+import com.xiaochao.modal.Teacher;
 import com.xiaochao.vo.VoAdviser;
 import com.xiaochao.vo.VoStudent;
 import org.apache.ibatis.annotations.Param;
@@ -45,6 +46,13 @@ public interface GroupDao {
      * @param designId 毕设ID
      * @return 所有答辩学生
      */
-    List<VoStudent> GetAllStudent(Integer designId);
+    List<VoStudent> getAllStudent(Integer designId);
 
+    int getTeacherSubject(Long teacherId);
+
+    List<Integer> subjectIds(Integer designId);
+
+    void updSubBy(@Param("studentId") Long sId, @Param("subjectId") Integer subId);
+
+    List<Teacher> getTeachersByDesignId(int designId);
 }

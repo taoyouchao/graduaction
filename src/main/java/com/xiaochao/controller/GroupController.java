@@ -3,6 +3,7 @@ package com.xiaochao.controller;
 import com.xiaochao.service.GroupService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,6 +31,13 @@ public class GroupController {
     public Map<String,Object> createGroups(Integer designId) {
 
         return groupService.createGroups(designId);
+    }
+
+    @ApiOperation("模拟选题")
+    @PatchMapping("/auto_select")
+    public void autoSelect(Integer designId) {
+        System.out.println("designId: " + designId);
+        groupService.autoSelect(designId);
     }
 
 }

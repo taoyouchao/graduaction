@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaochao.dao.SearchDao">
+    <resultMap id="search" type="com.xiaochao.modal.Search">
+        <id property="searchId" column="search_id"/>
+        <result property="searchType" column="search_type"/>
+    </resultMap>
+
+    <select id="getAllSearch" resultMap="search">
+        select search_id, search_type from search where design_id=#{designId};
+    </select>
+
+    <insert id="insertSearch" useGeneratedKeys="true" keyProperty="search.searchId">
+        insert into search (search_type, design_id) VALUES (#{search.searchType},#{designId});
+    </insert>
+
+    <delete id="deleteSearch">
+        delete from search where search_id=#{searchId} and design_id=#{designId};
+    </delete>
+
+
+
+
+</mapper>

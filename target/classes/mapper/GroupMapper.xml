@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaochao.dao.GroupDao">
+    <resultMap id="group" type="com.xiaochao.modal.Group">
+        <id property="groupId" column="group_id"/>
+        <result property="groupNumber" column="group_number"/>
+        <association property="search" javaType="com.xiaochao.modal.Search">
+            <id property="searchId" column="search_id"/>
+            <result property="searchType" column="search_type"/>
+        </association>
+    </resultMap>
+    <insert id="insertGroup" >
+        insert into `group`(search_id) VALUE(#{searchId})
+    </insert>
+
+
+</mapper>

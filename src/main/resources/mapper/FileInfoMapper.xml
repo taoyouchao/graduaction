@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaochao.dao.FileInfoDao">
+    <resultMap id="fileInfo" type="com.xiaochao.modal.FileInfo">
+        <id property="fileId" column="file_id"/>
+        <result property="fileName" column="file_name"/>
+        <result property="rootPath" column="root_path"/>
+        <result property="taskId" column="task_id"/>
+        <result property="userId" column="user_id"/>
+        <result property="userType" column="user_type"/>
+    </resultMap>
+
+    <insert id="insertFile" >
+        insert into file(file_name, root_path, task_id, user_id, user_type)
+        value (#{fileName},#{rootPath},#{taskId},#{userId},#{userType})
+    </insert>
+    <select id="selectFile" resultMap="fileInfo">
+        select file_id, file_name, root_path, task_id, user_id, user_type from file where file.file_id=#{fileId}
+    </select>
+    <select id="selectFileList" resultMap="fileInfo">
+        select file_id, file_name, root_path, task_id, user_id, user_type from file f where f.user_id=#{userId} and f.task_id=#{taskId}
+    </select>
+    <select id="getFileOther" resultMap="fileInfo">
+        select file_id, file_name, root_path, task_id, user_id, user_type from file f where f.task_id=#{taskId} and f.user_type=#{userType};
+    </select>
+
+</mapper>

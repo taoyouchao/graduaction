@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: graduation
+
+#日志配置
+logging:
+  config: classpath:log/logback-spring.xml

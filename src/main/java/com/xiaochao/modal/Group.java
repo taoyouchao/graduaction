@@ -33,6 +33,9 @@ public class Group {
     @ApiModelProperty("研究方向")
     private Search search;
 
+    @ApiModelProperty("毕业设计 ID")
+    private Integer designId;
+
     @ApiModelProperty("该小组里的指导老师")
     private List<VoAdviser> advisers;
 
@@ -41,5 +44,8 @@ public class Group {
 
     @ApiModelProperty("该小组里的学生")
     private List<VoStudent> students;
+
+    @ApiModelProperty("该小组的评审老师")
+    private List<VoAdviser> reviews;
 
 }

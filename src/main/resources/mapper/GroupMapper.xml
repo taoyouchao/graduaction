@@ -13,5 +13,19 @@
         insert into `group`(search_id) VALUE(#{searchId})
     </insert>
 
+    <select id="countGroup" resultType="int" parameterType="int">
+        select count(*) from `group` where design_id = #{designId}
+    </select>
 
+<!--    获取学生的研究方向-->
+    <select id="getSearchBysId" parameterType="int" resultType="com.xiaochao.modal.Search">
+        select * from search sea where sea.search_id =
+        (select sub.search_id from `subject` sub where sub.student_id = 4 );
+    </select>
+
+<!--    获取学生指导教师-->
+    <select id="getTeacherBysId" parameterType="int" resultType="com.xiaochao.vo.VoAdviser">
+        select u.id, u.username, u.nick_name from user u where u.id =
+        (select sub.adviser_id from `subject` sub WHERE sub.student_id = 4)
+    </select>
 </mapper>

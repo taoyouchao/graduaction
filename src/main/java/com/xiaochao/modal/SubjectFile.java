@@ -29,7 +29,7 @@ public class SubjectFile {
     @ApiModelProperty("文件存放路径")
     private String rootPath;
 
-    @ApiModelProperty("所属哪个任务下")
+    @ApiModelProperty("所属哪个课题下")
     private Integer subjectId;
 
     @ApiModelProperty("附件所属用户")

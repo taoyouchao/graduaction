@@ -9,6 +9,14 @@
         <result property="userId" column="user_id"/>
         <result property="userType" column="user_type"/>
     </resultMap>
+    <resultMap id="subFileInfo" type="com.xiaochao.modal.SubjectFile">
+        <id property="fileId" column="file_id"/>
+        <result property="fileName" column="file_name"/>
+        <result property="rootPath" column="root_path"/>
+        <result property="subjectId" column="subject_id"/>
+        <result property="userId" column="user_id"/>
+        <result property="userType" column="user_type"/>
+    </resultMap>
 
     <insert id="insertFile" >
         insert into file(file_name, root_path, task_id, user_id, user_type)
@@ -23,5 +31,23 @@
     <select id="getFileOther" resultMap="fileInfo">
         select file_id, file_name, root_path, task_id, user_id, user_type from file f where f.task_id=#{taskId} and f.user_type=#{userType};
     </select>
+    
+    
+    
+    <insert id="insertSubFile">
+        insert into file(file_name, root_path, subject_id, user_id, user_type)
+        value (#{fileName},#{rootPath},#{subjectId},#{userId},#{userType})
+    </insert>
+    <select id="selectSubFile" resultMap="subFileInfo">
+        select file_id, file_name, root_path, subject_id, user_id, user_type from file where file.file_id=#{fileId}
+    </select>
+    <select id="selectSubFileList" resultMap="subFileInfo">
+        select file_id, file_name, root_path, subject_id, user_id, user_type from file f where f.user_id=#{userId} and f.subject_id=#{subjectId}
+    </select>
+    <select id="getSubFileOther" resultMap="subFileInfo">
+        select file_id, file_name, root_path, subject_id, user_id, user_type from file f where f.subject_id=#{subjectId} and f.user_type=#{userType};
+    </select>
+
+
 
 </mapper>

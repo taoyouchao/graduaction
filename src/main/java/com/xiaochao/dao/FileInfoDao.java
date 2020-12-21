@@ -1,6 +1,7 @@
 package com.xiaochao.dao;
 
 import com.xiaochao.modal.FileInfo;
+import com.xiaochao.modal.SubjectFile;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -16,5 +17,14 @@ public interface FileInfoDao {
     public List<FileInfo> selectFileList(@Param("taskId") Integer taskId,@Param("userId") Integer userId);
 
     public List<FileInfo> getFileOther(@Param("taskId") Integer taskId,@Param("userType")String userType);
+
+
+    public Integer insertSubFile(SubjectFile subjectFile);
+
+    public SubjectFile selectSubFile(Integer filed);
+
+    public List<SubjectFile> selectSubFileList(@Param("subjectId") Integer subjectId,@Param("userId") Integer userId);
+
+    public List<SubjectFile> getSubFileOther(@Param("subjectId") Integer subjectId,@Param("userType")String userType);
 
 }

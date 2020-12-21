@@ -2,6 +2,8 @@ package com.xiaochao.service;
 
 import com.xiaochao.dao.FileInfoDao;
 import com.xiaochao.modal.FileInfo;
+import com.xiaochao.modal.SubjectFile;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -35,6 +37,20 @@ public class FileInfoService {
     }
 
 
+    public Integer insertSubFile(SubjectFile subjectFile){
+        return fileInfoDao.insertSubFile(subjectFile);
+    }
 
+    public SubjectFile selectSubFile(Integer filed){
+        return fileInfoDao.selectSubFile(filed);
+    }
+
+    public List<SubjectFile> selectSubFileList(Integer subjectId,Integer userId){
+        return fileInfoDao.selectSubFileList(subjectId, userId);
+    }
+
+    public List<SubjectFile> getSubFileOther(Integer subjectId,String userType){
+        return fileInfoDao.getSubFileOther(subjectId, userType);
+    }
 
 }

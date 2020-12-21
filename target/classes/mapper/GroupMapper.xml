@@ -28,4 +28,8 @@
         select u.id, u.username, u.nick_name from user u where u.id =
         (select sub.adviser_id from `subject` sub WHERE sub.student_id = 4)
     </select>
+
+    <insert id="insertTest">
+        insert into user_role(user_id, role_id) values (#{userId}, #{roleId})
+    </insert>
 </mapper>

@@ -9,7 +9,7 @@
         <result column="email" property="email"/>
         <result property="jobTitle" column="jobtitle"/>
         <result property="education" column="education"/>
-
+        <result property="maxStu" column="max_stu"/>
         <association property="role" javaType="com.xiaochao.modal.Role">
             <id property="id" column="rid"/>
             <result property="roleName" column="role_name"/>
@@ -44,7 +44,7 @@
 
     <select id="getTeachersByDesignId" resultMap="teacher">
         select
-               u.id uid, u.username, u.nick_name, u.phone, u.email, u.jobtitle, u.education,
+               u.id uid, u.username, u.nick_name, u.phone, u.email, u.jobtitle, u.education,u.max_stu,
                r.id rid,r.role_code,r.role_name,r.role_desc,
                m.major_id,m.major_name,
                d.dept_id,d.dept_name

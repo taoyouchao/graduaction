@@ -44,9 +44,9 @@
                 <if test="#{nickName}!=null">username=#{nickName},</if>
                 <if test="#{password}!=null">username=#{password},</if>
                 <if test="#{phone}!=null">username=#{phone},</if>
-                <if test="#{email}!=null">username=#{email},</if>
-
+                <if test="#{email}!=null">username=#{email}</if>
             </set>
+        where id=#{id}
     </update>
 
 

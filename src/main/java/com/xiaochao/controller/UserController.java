@@ -1,9 +1,11 @@
 package com.xiaochao.controller;
 
+import com.xiaochao.modal.User;
 import com.xiaochao.service.JwtAuthService;
 import com.xiaochao.service.UserService;
 import com.xiaochao.utils.ResultMap;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -69,6 +71,22 @@ public class UserController {
         }
         String userName=jwtAuthService.getUserNameByToken(token);
         return ResultMap.setResult(200,userService.getUserByUserName(userName),"用户信息获取成功");
+    }
+
+    @ApiOperation("用户修改个人信息")
+    @PutMapping("/updateUserInfo")
+    public Map<String,Object> updateUser(@RequestBody User user){
+        if (user==null){
+            return ResultMap.setResult(200,null,"参数为空");
+        }
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String hashedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(hashedPassword);
+        Integer result = userService.updateUser(user);
+        if (result==0){
+            return ResultMap.setResult(200,null,"修改用户信息失败");
+        }
+        return ResultMap.setResult(200,result,"修改用户信息成功");
     }
 
 }

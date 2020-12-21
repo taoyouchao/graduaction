@@ -15,6 +15,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -94,17 +95,34 @@ public class SubjectController {
         }
         return ResultMap.setResult(200,result,"学生选题成功");
     }
+    @ApiOperation("学生获取以选课题")
+    @GetMapping("/subject/student/getchose")
+    public Map<String,Object> getChosed(Integer stuId){
+        Subject subject = subjectService.getChosed(stuId);
+        List<Subject> subjects=new ArrayList<>();
+        subjects.add(subject);
+        return ResultMap.setResult(200,subjects,"获取以选课题成功");
+    }
+
+    @ApiOperation("学生取消选题")
+    @PutMapping("/subject/student/cancelChoose")
+    public Map<String,Object> cancelChoose(Integer stuId){
+        Integer result = subjectService.updateChose(stuId);
+        if (result==0){
+            return ResultMap.setResult(200,result,"取消选题失败");
+        }
+        return ResultMap.setResult(200,result,"取消选题成功");
+    }
 
     @ApiOperation("学生修改选题")
     @PutMapping("/subject/student/updateChose")
     public Map<String,Object> updateChose(@RequestParam("stuId") Integer stuId,
                                           @RequestParam("subId") Integer subId){
-
+        subjectService.updateChose(stuId);
         Integer result = subjectService.choseSubject(subId, stuId);
         if (result==0){
             return ResultMap.setResult(200,result,"学生修改选题失败");
         }
-        subjectService.updateChose(stuId);
         return ResultMap.setResult(200,result,"学生修改选题成功");
     }
 

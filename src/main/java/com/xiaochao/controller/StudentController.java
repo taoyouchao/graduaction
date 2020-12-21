@@ -37,6 +37,13 @@ public class StudentController {
         return ResultMap.setResult(200,studentService.getStudentsByDesignId(designId),"获取到studentList");
     }
 
+
+    @ApiOperation("根据学号查询designId")
+    @GetMapping("/stu/getDesignId")
+    public Map<String,Object> getDesignId(@RequestParam("stuId") Integer stuId){
+        return ResultMap.setResult(200,studentService.getDesignId(stuId),"获取学生参加的毕业id成功");
+    }
+
     @ApiOperation("删除学生信息")
     @DeleteMapping("/student/deleteStudent")
     public Map<String,Object> deleteTeacher(@RequestParam("studentId") Integer studentId){

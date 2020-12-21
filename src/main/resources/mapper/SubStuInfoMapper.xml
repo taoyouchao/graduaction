@@ -1,28 +1,28 @@
-
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.xiaochao.dao.SubStuInfoDao">
+
     <resultMap id="subStuInfo" type="com.xiaochao.vo.VoSubjectStudent">
-        <result property="studentId" column=""/>
-        <result property="studentName" column=""/>
-        <result property="subjectId" column=""/>
-        <result property="subjectTitle" column=""/>
-        <result property="level" column=""/>
-        <result property="subStatue" column=""/>
-        <result property="adviserGrade" column=""/>
-        <result property="reviewGrade" column=""/>
-        <result property="replyGrade" column=""/>
+        <result property="studentId" column="student_id"/>
+        <result property="studentName" column="nick_name"/>
+        <result property="subjectId" column="subject_id"/>
+        <result property="subjectTitle" column="sub_title"/>
+        <result property="level" column="level"/>
+        <result property="subStatue" column="subject_statue"/>
+        <result property="adviserGrade" column="adviser_grade"/>
+        <result property="reviewGrade" column="review_grade"/>
+        <result property="replyGrade" column="reply_grade"/>
         <association property="major" javaType="com.xiaochao.modal.Major">
-            <result property="majorId" column=""/>
-            <result property="majorName" column=""/>
+            <result property="majorId" column="major_id"/>
+            <result property="majorName" column="major_name"/>
         </association>
         <association property="college" javaType="com.xiaochao.modal.College">
-            <result property="collegeId" column=""/>
-            <result property="collegeName" column=""/>
+            <result property="collegeId" column="dept_id"/>
+            <result property="collegeName" column="dept_name"/>
         </association>
         <association property="search" javaType="com.xiaochao.modal.Search">
-            <result property="searchId" column=""/>
-            <result property="searchType" column=""/>
+            <result property="searchId" column="search_id"/>
+            <result property="searchType" column="search_type"/>
         </association>
     </resultMap>
 

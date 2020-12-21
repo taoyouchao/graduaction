@@ -45,5 +45,7 @@ public interface StudentDao {
 
     public Integer deleteStudent(@Param("studentId") Integer studentId);
 
+    public Integer getDesignId(Integer stuId);
+
 
 }

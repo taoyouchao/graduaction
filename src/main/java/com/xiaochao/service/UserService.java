@@ -27,4 +27,8 @@ public class UserService {
     public User getUserByUserName(String username){
         return userDao.getUserByUserName(username);
     }
+
+    public Integer updateUser(User user){
+        return userDao.updateUser(user);
+    }
 }

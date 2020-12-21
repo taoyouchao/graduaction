@@ -1,14 +1,13 @@
 package com.xiaochao.controller;
 
+import com.xiaochao.modal.Rule;
 import com.xiaochao.service.SubStuInfoService;
 import com.xiaochao.utils.ResultMap;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -34,8 +33,13 @@ public class SubStuInfoController {
 
     @ApiOperation("指导老师打指导成绩")
     @PutMapping("/subStuInfo/upAdviser")
-    public Map<String,Object> upAdviser( Integer studentId,Float adviserGrade){
-        if (studentId==null||adviserGrade==null){
+    public Map<String,Object> upAdviser(@RequestBody List<Rule> ruleList, Integer studentId){
+        Integer size=ruleList.size();
+        float adviserGrade=0;
+        for (Rule rule : ruleList) {
+            adviserGrade+=(rule.getGrade()/size);
+        }
+        if (studentId==null||ruleList.isEmpty()){
             return ResultMap.setResult(200,null,"参数为空");
         }
         Integer result = subStuInfoService.upAdviser(studentId, adviserGrade);
@@ -44,11 +48,17 @@ public class SubStuInfoController {
         }
         return ResultMap.setResult(200,result,"打分成功");
     }
+    
     @ApiOperation("评审老师打评审成绩")
     @PutMapping("/subStuInfo/upReview")
-    public Map<String, Object> upReview(Integer studentId, Float reviewGrade){
-        if (studentId==null||reviewGrade==null){
+    public Map<String, Object> upReview(@RequestBody List<Rule> ruleList,Integer studentId){
+        if (studentId==null||ruleList.isEmpty()){
             return ResultMap.setResult(200,null,"参数为空");
+        }
+        Integer size=ruleList.size();
+        float reviewGrade=0;
+        for (Rule rule : ruleList) {
+            reviewGrade+=(rule.getGrade()/size);
         }
         Integer result = subStuInfoService.upReview(studentId, reviewGrade);
         if (result==0){
@@ -56,11 +66,17 @@ public class SubStuInfoController {
         }
         return ResultMap.setResult(200,result,"打分成功");
     }
+
     @ApiOperation("答辩老师打答辩成绩")
     @PutMapping("/subStuInfo/upReply")
-    public Map<String, Object> upReply(Integer studentId, Float replyGrade){
-        if (studentId==null||replyGrade==null){
+    public Map<String, Object> upReply(@RequestBody List<Rule> ruleList, Integer studentId){
+        if (studentId==null||ruleList==null){
             return ResultMap.setResult(200,null,"参数为空");
+        }
+        Integer size=ruleList.size();
+        float replyGrade=0;
+        for (Rule rule : ruleList) {
+            replyGrade+=(rule.getGrade()/size);
         }
         Integer result = subStuInfoService.upReply(studentId, replyGrade);
         if (result==0){

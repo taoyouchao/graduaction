@@ -4,6 +4,7 @@
     <resultMap id="user" type="com.xiaochao.modal.User">
         <id column="uid" property="id"/>
         <result column="username" property="username"/>
+        <result column="nick_name" property="nickName"/>
         <result column="password" property="password"/>
         <result column="enabled" property="enabled"/>
         <result column="phone" property="phone"/>
@@ -36,6 +37,17 @@
             left join role r on ur.role_id = r.id
         where u.major_id=m.major_id and m.depart_id=d.dept_id and u.username=#{username};
     </select>
+
+    <update id="updateUser">
+        update user
+            <set>
+                <if test="#{nickName}!=null">username=#{nickName},</if>
+                <if test="#{password}!=null">username=#{password},</if>
+                <if test="#{phone}!=null">username=#{phone},</if>
+                <if test="#{email}!=null">username=#{email}</if>
+            </set>
+        where id=#{id}
+    </update>
 
 
 

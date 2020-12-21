@@ -82,6 +82,10 @@ public class SubjectService {
         return subjectDao.choseSubject(subId, studentId);
     }
 
+    public Subject getChosed(Integer stuId){
+        return subjectDao.getChosed(stuId);
+    }
+
     /**
      * @Description: 学生修改选题
      * @Param: [stuId 学生id, subId 课题id]

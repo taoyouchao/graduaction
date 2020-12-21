@@ -30,6 +30,11 @@ public class StudentService {
         return studentDao.getAllExcelStudentByDesignId(designId);
     }
 
+    public Integer getDesignId(Integer stuId){
+        return studentDao.getDesignId(stuId);
+    }
+
+
 
     public void insertExcelStudents( List<ExcelStudent> students){
         studentDao.insertExcelStudents(students);

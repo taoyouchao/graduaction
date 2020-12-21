@@ -78,6 +78,10 @@
         delete from user where id=#{studentId}
     </delete>
 
+    <select id="getDesignId" resultType="java.lang.Integer">
+        select design_id from user where user.id=#{stuId}
+    </select>
+
 
 
 

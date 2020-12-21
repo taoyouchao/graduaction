@@ -73,5 +73,13 @@ public interface SubjectDao {
     */
     public Integer updateChose(@Param("stuId") Integer stuId);
 
+    /**
+    * @Description: 获取到以选择的课题
+    * @Param: [stuId]
+    * @return: com.xiaochao.modal.Subject
+    * @Date: 2020/12/22
+    */
+    public Subject getChosed(Integer stuId);
+
 
 }

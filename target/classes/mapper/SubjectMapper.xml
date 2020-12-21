@@ -41,8 +41,20 @@
         insert into subject(adviser_id, sub_title, search_id, discription, level, design_id)
         VALUE (#{adviserId},#{subTitle},#{search.searchId},#{description},#{level},#{designId})
     </insert>
-    <update id="updateMaxStu">
-        update user set max_stu=#{maxStu} where id=#{teacherId};
+
+    <select id="getChosed" resultMap="subject">
+        select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id,
+               sh.search_id,sh.search_type,
+               u.nick_name
+        from subject sb,search sh,user u
+        where sb.search_id=sh.search_id and u.id=sb.adviser_id and sb.student_id=#{stuId}
+    </select>
+
+    <update id="updateMaxStu" >
+        update
+            user
+        set max_stu=#{maxStu}
+        where id=#{teacherId};
     </update>
 
     <delete id="deleteSubject">
@@ -50,11 +62,17 @@
     </delete>
 
     <update id="choseSubject">
-        update subject sub set sub.student_id=#{stuId},sub.checked=1 where sub.subject_id=#{subId};
+        update
+            subject sub
+        set sub.student_id=#{stuId},sub.checked=1
+        where sub.subject_id=#{subId};
     </update>
 
     <update id="updateChose">
-        update subject sub set sub.checked=0,sub.student_id=null where sub.student_id=#{stuId};
+        update
+            subject sub
+        set sub.checked=0,sub.student_id=null
+        where sub.student_id=#{stuId};
     </update>
 
 

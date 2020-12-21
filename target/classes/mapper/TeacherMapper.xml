@@ -79,5 +79,32 @@
         delete from user where id=#{teacherId}
     </delete>
 
+    <select id="getTeacher" resultMap="teacher">
+        select
+            u.id uid, u.username, u.nick_name, u.phone, u.email, u.jobtitle, u.education,
+            r.id rid,r.role_code,r.role_name,r.role_desc,
+            m.major_id,m.major_name,
+            d.dept_id,d.dept_name
+        from (user u,dept d,major m)
+                 left join user_role ur on ur.user_id=u.id
+                 left join role r on r.id=ur.role_id
+        where  d.dept_id=m.depart_id and m.major_id=u.major_id and u.id=#{teacherId} and r.id=2
+    </select>
+
+    <update id="updateTeacher" parameterType="com.xiaochao.modal.Teacher">
+        update user
+        <set>
+            <if test="#{username}!=null">username=#{username},</if>
+            <if test="#{nickName}!=null">nick_name=#{nickName},</if>
+            <if test="#{phone}!=null">phone=#{phone},</if>
+            <if test="#{email}!=null">email=#{email},</if>
+            <if test="#{major.majorId}!=null">major_id=#{major.majorId},</if>
+            <if test="#{design.designId}!=null">design_id=#{design.designId},</if>
+            <if test="#{jobTitle}!=null">jobtitle=#{jobTitle},</if>
+            <if test="#{education}!=null">education=#{education}</if>
+        </set>
+        where id=#{id}
+    </update>
+
 
 </mapper>

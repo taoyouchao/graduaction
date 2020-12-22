@@ -269,6 +269,7 @@ public class GroupService {
             System.out.println("学生题已经选好了");
             return;
         }
+
         while (currentSubject < totalSubject) {
 
             System.out.println("老师已经出完题了： " + teachers);

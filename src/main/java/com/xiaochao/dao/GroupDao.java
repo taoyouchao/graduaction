@@ -1,7 +1,6 @@
 package com.xiaochao.dao;
 
-import com.xiaochao.modal.Search;
-import com.xiaochao.modal.Teacher;
+import com.xiaochao.modal.*;
 import com.xiaochao.vo.VoAdviser;
 import com.xiaochao.vo.VoStudent;
 import org.apache.ibatis.annotations.Param;
@@ -9,10 +8,16 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * @author asus
+ */
 @Repository
 public interface GroupDao {
 
     Integer insertGroup(Integer searchId);
+
+    Integer insertGroup2(@Param("groupNumber") String groupNumber, @Param("searchId") Integer searchId,
+                        @Param("designId") Integer designId);
 
 
     /**
@@ -55,4 +60,15 @@ public interface GroupDao {
     void updSubBy(@Param("studentId") Long sId, @Param("subjectId") Integer subId);
 
     List<Teacher> getTeachersByDesignId(int designId);
+
+
+    int countAllSelect(int designId);
+
+    void insertGroupAdviser(GroupAdviser groupAdviser);
+
+    void insertGroupReply(GroupReply groupReply);
+
+    void insertGroupStudentReview(GroupStudentReview review);
+
+    List<Group> findAllGroup(Integer designId);
 }

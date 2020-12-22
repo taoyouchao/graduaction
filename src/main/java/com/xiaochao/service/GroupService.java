@@ -1,10 +1,7 @@
 package com.xiaochao.service;
 
 import com.xiaochao.dao.GroupDao;
-import com.xiaochao.modal.Group;
-import com.xiaochao.modal.Search;
-import com.xiaochao.modal.Subject;
-import com.xiaochao.modal.Teacher;
+import com.xiaochao.modal.*;
 import com.xiaochao.utils.ResultMap;
 import com.xiaochao.vo.VoAdviser;
 import com.xiaochao.vo.VoStudent;
@@ -71,7 +68,7 @@ public class GroupService {
          *              TWOLEVEL : 已有的答辩老师数量
          *
          */
-        int nMaxGroupStudent = 20;
+        int nMaxGroupStudent = 10;
         int nMinGroupStudent = 5;
         // 1. 获取所有数据
         // 1.1 获取 nStudent
@@ -91,21 +88,19 @@ public class GroupService {
 
         // 2. 创建一个组
         // 3. 分配学生
-        for (int i = 0; i < nStudent; i++) {
-            if(nGroup == 0) {
+        for (VoStudent student : students) {
+            if (nGroup == 0) {
                 // 当前还没有组 该学生只能 新建一个组
-                VoStudent s = students.get(i);
-                nGroup = createOneGroup(groups, s, designId, nGroup);
+                nGroup = createOneGroup(groups, student, designId, nGroup);
 
-            }else {
+            } else {
                 // 前面已经有创建好的组了
                 // 现在需要判断是否符合加入的要求了
-                VoStudent voS = students.get(i);
-                Search search = groupDao.getSearchBysId(voS.getId());
+                Search search = groupDao.getSearchBysId(student.getId());
                 // 如果符合 直接加入组
                 // 如果不符合 重新创建小组
-                if(!condition(groups, voS, search, nMaxGroupStudent)) {
-                    nGroup = createOneGroup(groups, voS, designId, nGroup);
+                if (!condition(groups, student, search, nMaxGroupStudent)) {
+                    nGroup = createOneGroup(groups, student, designId, nGroup);
 
                 }
 
@@ -119,14 +114,45 @@ public class GroupService {
         groups = merge(groups, nMinGroupStudent, nMaxGroup);
 
         // 4. 分配教师
-        for (int i = 0; i < nTeacher; i++) {
-            Teacher t = teachers.get(i);
+        for (Teacher t : teachers) {
             VoAdviser v = new VoAdviser((int) t.getId().longValue(), t.getUsername(), t.getNickName());
             review(v, groups, 3);
         }
 
-        // 5. 分配 学生 与教师的评审关系 （平均分配 例如 一个组 20 个学生 3 个答辩老师  6 7 7）
+        // 将数据持久化到数据库中
+        for (Group group : groups) {
+            System.out.println("开始保存数据： " + group.getGroupNumber() + "\n" + "指导教师"+ group.getAdvisers() + "\n" +"答辩教师" + group.getReviews());
+            // 插入小组
+            groupDao.insertGroup2(group.getGroupNumber(), group.getSearch().getSearchId(), designId);
 
+            List<VoAdviser> advisers = group.getAdvisers();
+            // 插入指导教师
+            for (VoAdviser adviser : advisers) {
+                groupDao.insertGroupAdviser(new GroupAdviser(group.getGroupNumber(), adviser.getId().longValue(), designId));
+
+            }
+
+            // 插入 答辩教师
+            List<VoAdviser> replies = group.getReviews();
+            for (VoAdviser reply : replies) {
+                groupDao.insertGroupReply(new GroupReply(group.getGroupNumber(), reply.getId().longValue(), designId));
+            }
+
+            // 插入学生
+            // 每个 答辩老师 平均评审一组的学生
+            List<VoStudent> s = group.getStudents();
+
+            int index = 0;
+
+            for (VoStudent v : s) {
+
+                groupDao.insertGroupStudentReview(new GroupStudentReview(v.getId().longValue(),
+                        replies.get(index).getId().longValue(), designId));
+                index = (index + 1) % replies.size();
+            }
+        }
+
+        // 5. 分配 学生 与教师的评审关系 （平均分配 例如 一个组 20 个学生 3 个答辩老师  6 7 7）
         return ResultMap.setResult("200", groups, "分组");
 
     }
@@ -137,7 +163,9 @@ public class GroupService {
         groups.add(group);
 
         // 获取 该学生的研究 方向
+        System.out.println("student: " + s.toString());
         Search search = groupDao.getSearchBysId(s.getId());
+        System.out.println("search: " + search);
         // 获取该学生的指导老师
         VoAdviser t = groupDao.getTeacherBysId(s.getId());
 
@@ -165,7 +193,7 @@ public class GroupService {
             if(group.getStudents().size() >= nMaxGroupStudent) {
                 continue;
             }
-
+            System.out.println("group: " + group.toString());
             if(!group.getSearch().getSearchId().equals(search.getSearchId())) {
                 continue;
             }
@@ -199,6 +227,7 @@ public class GroupService {
     private void review(VoAdviser t, LinkedList<Group> groups, int nDefaultReview) {
         // 从头到尾
         boolean isAdd = false;
+        Group questionGroup = null;
         for (Group group : groups) {
             // 首先获取本组的指导教师
             // 排除掉本组的指导教师
@@ -221,14 +250,21 @@ public class GroupService {
                 // 如果这一组的评审老师 已经超过了 默认的值 则直接放到下一组
                 if(reviews.size() <= nDefaultReview) {
                     reviews.add(t);
+                    group.setReviews(reviews);
                     isAdd = true;
                 }
 
+            }else {
+                // 该老师没有被分配
+                // 该组没有添加
+                questionGroup = group;
             }
         }
 
         if(!isAdd) {
             // throw new ArithmeticException("该老师： " + t.toString() + "无法分配");
+            //System.out.println("该组的所有指导老师为： " + questionGroup.getAdvisers());
+
             System.out.println("该老师： " + t.toString() + "无法分配");
         }
     }
@@ -246,13 +282,33 @@ public class GroupService {
         List<VoStudent> students = groupDao.getAllStudent(designId);
         System.out.println("student的数目: " + students.size());
         int totalSubject = students.size();
-        System.out.println("total: " + totalSubject);
+
         int currentSubject = 0;
 
-        int ratio = 0;
-        System.out.println(teachers);
+
+        // 首先计算老师出题的 最大数量
+        int maxTotal = 0;
+        for (Teacher teacher : teachers) {
+            if(teacher.getMaxStu() == null) {
+                teacher.setMaxStu(0);
+            }
+            maxTotal += teacher.getMaxStu();
+        }
+
+        System.out.println("最大出题数量： " + maxTotal);
+
+        if(maxTotal < students.size()) {
+            throw new ArithmeticException("题目根本不够，cdq 加题！");
+        }
+
+        // 如果每个学生已经选完题则不必自动选择
+        if(groupDao.countAllSelect(designId) >= students.size()) {
+            System.out.println("学生题已经选好了");
+            return;
+        }
+
         while (currentSubject < totalSubject) {
-            // 如果 老师题目数不够
+
             System.out.println("老师已经出完题了： " + teachers);
 
             for (Teacher teacher : teachers) {
@@ -265,21 +321,24 @@ public class GroupService {
                 }
                 int total = maxStu;
 
-
-                System.out.println("该教师：" + teacher.toString() + maxStu);
-                //
                 int current = groupDao.getTeacherSubject(teacher.getId());
                 // 随机生成total - current道题
-                for (int i = 1; i <= total - current + ratio ; i++) {
+                if(total - current <= 0) {
+                    // 该教师已经无法生成多的题目了
+                    continue;
+                }
+                int randomIndex = new Random().nextInt(total - current);
+                randomIndex = randomIndex == 0 ? 1 : randomIndex;
+
+                for (int i = 1; i <= randomIndex && currentSubject < totalSubject; i++) {
+
                     subjectService.insertSubject(new Subject(null, teacher.getId().intValue(), null,   "题目" + teacher.getId()+ ""+ i, searches.get(sRandomIndex),
                             "测试题目",  1, designId, true, null));
-                }
-                currentSubject += total - current + ratio;
-                System.out.println("currentSubject : " + currentSubject);
-                System.out.println("total: " + total);
-            }
 
-            ratio += 10;
+                    currentSubject ++;
+                }
+
+            }
 
         }
 
@@ -301,5 +360,12 @@ public class GroupService {
 
 
     }
+
+    public List<Group> getAllDataGroup(Integer designId) {
+
+        return groupDao.findAllGroup(designId);
+    }
+
+
 
 }

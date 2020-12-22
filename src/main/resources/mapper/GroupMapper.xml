@@ -9,8 +9,13 @@
             <result property="searchType" column="search_type"/>
         </association>
     </resultMap>
+
     <insert id="insertGroup" >
         insert into `group`(search_id) VALUE(#{searchId})
+    </insert>
+
+    <insert id="insertGroup2" >
+        insert into `group`(group_number, search_id, design_id) VALUE(#{groupNumber}, #{searchId}, #{designId})
     </insert>
 
     <select id="countGroup" resultType="int" parameterType="int">
@@ -18,7 +23,11 @@
     </select>
 
 <!--    获取学生的研究方向-->
-    <select id="getSearchBysId" parameterType="int" resultType="com.xiaochao.modal.Search">
+    <resultMap id="SearchMap" type="com.xiaochao.modal.Search">
+        <id column="search_id" property="searchId" />
+        <result column="search_type" property="searchType" />
+    </resultMap>
+    <select id="getSearchBysId" parameterType="int" resultMap="SearchMap">
         select * from search sea where sea.search_id =
         (select sub.search_id from `subject` sub where sub.student_id = 4 );
     </select>
@@ -44,7 +53,7 @@
     </select>
 
     <update id="updSubBy" >
-        update `subject` set student_id = #{studentId} where subject_id = #{subjectId}
+        update `subject` set student_id = #{studentId}, checked = 1 where subject_id = #{subjectId}
     </update>
 
     <resultMap id="TeacherMap" type="com.xiaochao.modal.Teacher">
@@ -56,4 +65,27 @@
         select u.id, u.max_stu from user u WHERE u.id in
         (select ur.user_id from user_role ur WHERE ur.role_id = 2) and u.design_id = #{designId} and u.max_stu is not NULL
     </select>
+
+<!--    获取当前已选题数-->
+    <select id="countAllSelect" resultType="int" parameterType="int">
+        select count(*) from subject where checked = 1;
+    </select>
+
+    <insert id="insertGroupAdviser" parameterType="com.xiaochao.modal.GroupAdviser">
+        insert into group_adviser(group_no, adviser_id,  design_id) values (#{groupNo}, #{adviserId},  #{designId})
+    </insert>
+
+    <insert id="insertGroupReply" parameterType="com.xiaochao.modal.GroupReply">
+        insert into group_reply(group_no, reply_id,  design_id) values (#{groupNo}, #{replyId},  #{designId})
+    </insert>
+
+    <insert id="insertGroupStudentReview" parameterType="com.xiaochao.modal.GroupStudentReview">
+        insert into group_review(id, review_id, design_id) values (#{id}, #{reviewId}, #{designId})
+    </insert>
+
+    <select id="findAllGroup" resultMap="group" parameterType="int">
+        select * from `group` g left join `search` s on g.search_id = s.search_id and g.design_id = #{designId};
+    </select>
+
+
 </mapper>

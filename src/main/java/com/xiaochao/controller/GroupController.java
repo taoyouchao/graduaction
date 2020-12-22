@@ -1,13 +1,15 @@
 package com.xiaochao.controller;
 
+import com.xiaochao.modal.Group;
 import com.xiaochao.service.GroupService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -25,7 +27,6 @@ public class GroupController {
     private GroupService groupService;
 
 
-
     @ApiOperation("发起分组")
     @PostMapping("/groups")
     public Map<String,Object> createGroups(Integer designId) {
@@ -34,10 +35,16 @@ public class GroupController {
     }
 
     @ApiOperation("模拟选题")
-    @PatchMapping("/auto_select")
+    @PostMapping("/auto_select")
     public void autoSelect(Integer designId) {
         System.out.println("designId: " + designId);
         groupService.autoSelect(designId);
+    }
+
+    @ApiOperation("获取所有分组")
+    @GetMapping("/all_group/{id}")
+    public List<Group> getAllGroup(@PathVariable("id") Integer id) {
+        return groupService.getAllDataGroup(id);
     }
 
 }

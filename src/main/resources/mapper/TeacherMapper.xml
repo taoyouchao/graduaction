@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaochao.dao.TeacherDao">
+    <resultMap id="teacher" type="com.xiaochao.modal.Teacher">
+        <id column="uid" property="id"/>
+        <result column="username" property="username"/>
+        <result column="nick_name" property="nickName"/>
+        <result column="phone" property="phone"/>
+        <result column="email" property="email"/>
+        <result property="jobTitle" column="jobtitle"/>
+        <result property="education" column="education"/>
+        <result property="maxStu" column="max_stu"/>
+        <association property="role" javaType="com.xiaochao.modal.Role">
+            <id property="id" column="rid"/>
+            <result property="roleName" column="role_name"/>
+            <result property="roleCode" column="role_code"/>
+            <result property="roleDesc" column="role_desc"/>
+        </association>
+        <association property="major" javaType="com.xiaochao.modal.Major">
+            <id property="majorId" column="major_id"/>
+            <result property="majorName" column="major_name"/>
+        </association>
+        <association property="college" javaType="com.xiaochao.modal.College">
+            <id property="collegeId" column="dept_id"/>
+            <result property="collegeName" column="dept_name"/>
+        </association>
+
+    </resultMap>
+    <resultMap id="excelTeacher" type="com.xiaochao.vo.ExcelTeacher">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="teacherName" column="nick_name"/>
+        <result property="password" column="password"/>
+        <result property="phone" column="phone"/>
+        <result property="email" column="email"/>
+        <result property="majorId" column="major_id"/>
+        <result property="jobTitle" column="jobtitle"/>
+        <result property="education" column="education"/>
+        <result property="creatTime" column="create_time"/>
+        <result property="designId" column="design_id"/>
+        <result property="maxStu" column="max_stu"/>
+    </resultMap>
+
+
+    <select id="getTeachersByDesignId" resultMap="teacher">
+        select
+               u.id uid, u.username, u.nick_name, u.phone, u.email, u.jobtitle, u.education,u.max_stu,
+               r.id rid,r.role_code,r.role_name,r.role_desc,
+               m.major_id,m.major_name,
+               d.dept_id,d.dept_name
+        from (user u,dept d,major m)
+        left join user_role ur on ur.user_id=u.id
+        left join role r on r.id=ur.role_id
+             where  d.dept_id=m.depart_id and m.major_id=u.major_id and u.design_id=#{designId} and r.id=2
+    </select>
+
+
+    <select id="getAllExcelTeacherByDesignId" resultMap="excelTeacher">
+        select u.* from `user` u,user_role ur where ur.user_id=u.id and ur.role_id=2 and u.design_id=#{designId} ;
+    </select>
+
+    <insert id="insertExcelTeachers" parameterType="com.xiaochao.vo.ExcelTeacher" useGeneratedKeys="true" keyProperty="id">
+        insert into `user`
+        ( username, nick_name, password, phone, email, major_id, jobtitle, education, create_time, design_id,max_stu)
+        VALUES
+        <foreach item="item" collection="list" separator=",">
+            (#{item.username},#{item.teacherName},#{item.password},#{item.phone},#{item.email},#{item.majorId},#{item.jobTitle},#{item.education},#{item.creatTime},#{item.designId},#{item.maxStu})
+        </foreach>
+    </insert>
+
+    <insert id="insertRoleTeacher" parameterType="com.xiaochao.vo.ExcelTeacher">
+        insert into user_role (user_id, role_id) VALUES
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id},2)
+        </foreach>
+    </insert>
+
+    <delete id="deleteTeacher">
+        delete from user where id=#{teacherId}
+    </delete>
+
+    <select id="getTeacher" resultMap="teacher">
+        select
+            u.id uid, u.username, u.nick_name, u.phone, u.email, u.jobtitle, u.education,
+            r.id rid,r.role_code,r.role_name,r.role_desc,
+            m.major_id,m.major_name,
+            d.dept_id,d.dept_name
+        from (user u,dept d,major m)
+                 left join user_role ur on ur.user_id=u.id
+                 left join role r on r.id=ur.role_id
+        where  d.dept_id=m.depart_id and m.major_id=u.major_id and u.id=#{teacherId} and r.id=2
+    </select>
+
+    <update id="updateTeacher" parameterType="com.xiaochao.modal.Teacher">
+        update user
+        <set>
+            <if test="#{username}!=null">username=#{username},</if>
+            <if test="#{nickName}!=null">nick_name=#{nickName},</if>
+            <if test="#{phone}!=null">phone=#{phone},</if>
+            <if test="#{email}!=null">email=#{email},</if>
+            <if test="#{major.majorId}!=null">major_id=#{major.majorId},</if>
+            <if test="#{design.designId}!=null">design_id=#{design.designId},</if>
+            <if test="#{jobTitle}!=null">jobtitle=#{jobTitle},</if>
+            <if test="#{education}!=null">education=#{education}</if>
+        </set>
+        where id=#{id}
+    </update>
+
+
+</mapper>

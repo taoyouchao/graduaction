@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaochao.dao.SubStuInfoDao">
+
+    <resultMap id="subStuInfo" type="com.xiaochao.vo.VoSubjectStudent">
+        <result property="studentId" column="student_id"/>
+        <result property="studentName" column="nick_name"/>
+        <result property="subjectId" column="subject_id"/>
+        <result property="subjectTitle" column="sub_title"/>
+        <result property="level" column="level"/>
+        <result property="subStatue" column="subject_statue"/>
+        <result property="adviserGrade" column="adviser_grade"/>
+        <result property="reviewGrade" column="review_grade"/>
+        <result property="replyGrade" column="reply_grade"/>
+        <association property="major" javaType="com.xiaochao.modal.Major">
+            <result property="majorId" column="major_id"/>
+            <result property="majorName" column="major_name"/>
+        </association>
+        <association property="college" javaType="com.xiaochao.modal.College">
+            <result property="collegeId" column="dept_id"/>
+            <result property="collegeName" column="dept_name"/>
+        </association>
+        <association property="search" javaType="com.xiaochao.modal.Search">
+            <result property="searchId" column="search_id"/>
+            <result property="searchType" column="search_type"/>
+        </association>
+    </resultMap>
+
+    <select id="getStuInfoByAdviser" resultMap="subStuInfo">
+        select sub.student_id ,sub.subject_id,sub.sub_title,sub.level,sub.subject_statue,sub.adviser_grade,sub.review_grade,sub.reply_grade,
+               u.nick_name,
+               m.major_id,m.major_name,
+               d.dept_id,d.dept_name,
+               s.search_id,s.search_type
+        from subject sub ,user u,major m,dept d,search s
+        where
+              sub.student_id=u.id
+          and u.major_id=m.major_id
+          and m.depart_id=d.dept_id
+          and sub.search_id=s.search_id
+          and sub.adviser_id=#{adviserId}
+    </select>
+
+
+    <update id="upAdviser">
+        update subject sub set sub.adviser_grade=#{adviserGrade} where sub.student_id=#{studentId}
+    </update>
+
+    <update id="upReview">
+        update subject sub set sub.review_grade=#{reviewGrade} where sub.student_id=#{studentId}
+    </update>
+
+    <update id="upReply">
+        update subject sub set sub.reply_grade=#{replyGrade} where sub.student_id=#{studentId}
+    </update>
+
+
+</mapper>

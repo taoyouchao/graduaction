@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaochao.dao.TaskDao">
+    <resultMap id="task" type="com.xiaochao.modal.Task">
+        <id property="taskId" column="task_id"/>
+        <result property="taskTitle" column="title"/>
+        <result property="taskContent" column="content"/>
+        <result property="releaseTime" column="release_time"/>
+        <result property="endTime" column="end_time"/>
+        <result property="taskType" column="task_type"/>
+    </resultMap>
+    <resultMap id="voUser" type="com.xiaochao.vo.VoUser">
+        <result property="username" column="username"/>
+        <result property="nickName" column="nick_name"/>
+        <result property="statue" column="statue"/>
+    </resultMap>
+    <select id="queryTaskListByDesignId" resultMap="task">
+        select t.task_id, title, content, release_time, end_time, task_type
+        from task t where t.design_id=#{dsignId}
+    </select>
+    <select id="queryTaskListByType" resultMap="task">
+        select t.task_id, title, content, release_time, end_time, task_type
+        from task t,task_user tu
+        where
+              t.task_type=#{taskType} and
+              t.design_id=#{designId} and
+              tu.task_id=t.task_id and
+              tu.statue=#{statue} and
+              tu.user_id=#{userId};
+    </select>
+    
+    <insert id="insertByDesignId" useGeneratedKeys="true" keyProperty="taskId">
+        insert into task ( title, content, release_time, end_time, task_type, design_id)
+        VALUES (#{taskTitle},#{taskContent},#{releaseTime},#{endTime},#{taskType},#{designId})
+    </insert>
+
+    <insert id="insertTaskUser">
+        insert into task_user(task_id, user_id,statue) select #{task.taskId}, u.id,1 from `user` u,user_role ur where u.id=ur.user_id and ur.role_id=#{roleId};
+    </insert>
+    
+    <delete id="deleteByDesignId" >
+        delete from task where task_id=#{taskId};
+    </delete>
+
+    <update id="updateByDesignId">
+        update task
+        <set>
+            <if test="#{task.taskTitle} != null">title=#{task.taskTitle},</if>
+            <if test="#{task.taskContent} != null">content=#{task.taskContent},</if>
+            <if test="#{task.releaseTime} !=null">release_time=#{task.releaseTime},</if>
+            <if test="#{task.endTime} !=null">end_time=#{task.endTime},</if>
+            <if test="#{task.taskType} !=null">task_type=#{task.taskType}</if>
+        </set>
+        where task_id=#{taskId}
+    </update>
+
+    <select id="findTaskUser" resultMap="voUser">
+        select tu.statue,u.username,u.nick_name from task_user tu,user u where u.id=tu.user_id and  tu.task_id=#{taskId}
+    </select>
+
+    <update id="updateTaskStatue">
+        update task_user set statue=#{statue} where task_id=#{taskId} and user_id=#{userId};
+    </update>
+
+</mapper>

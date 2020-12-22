@@ -1,0 +1,17 @@
+com\xiaochao\dao\UserDao.class
+com\xiaochao\pojo\User.class
+com\xiaochao\service\UserService.class
+com\xiaochao\dao\PromissionDao.class
+com\xiaochao\pojo\UserMap.class
+com\xiaochao\service\UserServiceImp.class
+com\xiaochao\dao\DepartmentDao.class
+com\xiaochao\controller\UserController.class
+com\xiaochao\dao\RoleDao.class
+com\xiaochao\utils\ResultMap.class
+com\xiaochao\pojo\Promission.class
+com\xiaochao\dao\MajorDao.class
+com\xiaochao\pojo\Role.class
+com\xiaochao\pojo\Major.class
+com\xiaochao\pojo\Department.class
+com\xiaochao\config\SwaggerConfig.class
+com\xiaochao\SpringBootGraduation.class

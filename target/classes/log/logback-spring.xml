@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://ch.qos.logback/xml/ns/logback"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://ch.qos.logback/xml/ns/logback https://raw.githubusercontent.com/enricopulatzo/logback-XSD/master/src/main/xsd/logback.xsd"
+               scan="true"
+               scanPeriod="60 seconds"
+               debug="false"
+>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <!-- Spring环境变量 -->
+    <springProperty scope="context" name="logback.name" source="spring.application.name"/>
+    <springProperty scope="context" name="logback.path" source="logging.path" defaultValue="logs"/>
+    <springProperty scope="context" name="logback.level" source="logback.level" defaultValue="INFO"/>
+    <springProperty scope="context" name="logback.maxFileSize" source="logback.maxFileSize" defaultValue="300MB"/>
+    <springProperty scope="context" name="logback.maxHistory" source="logback.maxHistory" defaultValue="180"/>
+    <springProperty scope="context" name="logback.totalSizeCap" source="logback.totalSizeCap" defaultValue="1GB"/>
+    <springProperty scope="context" name="logback.charset" source="logback.charset" defaultValue="UTF-8"/>
+    <springProperty scope="context" name="logback.queueSize" source="logback.queueSize" defaultValue="500"/>
+    <springProperty scope="context" name="logback.discardingThreshold" source="logback.discardingThreshold"
+                    defaultValue="0"/>
+
+    <!-- 日志格式，带彩色 -->
+    <property name="CONSOLE_PATTERN_COLOR"
+              value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint}|%clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint}%clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint}%m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
+    <!-- 日志格式，纯文本 -->
+    <property name="CONSOLE_PATTERN"
+              value="${CONSOLE_LOG_PATTERN:-%d{yyyy-MM-dd HH:mm:ss.SSS}|${LOG_LEVEL_PATTERN:-%5p} ${PID:- } ---[%15.15t] %-40.40logger{39} :%m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
+
+
+    <appender name="MYBATIS_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 正在记录的日志文件的路径及文件名 -->
+        <file>${logback.path}/mybatis.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+<!--            <fileNamePattern>${logback.path}/mybatis.log.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>-->
+            <fileNamePattern>${logback.path}/mybatis.log.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>
+            <maxFileSize>${logback.maxFileSize}</maxFileSize>
+            <maxHistory>${logback.maxHistory}</maxHistory>
+            <totalSizeCap>${logback.totalSizeCap}</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <charset>${logback.charset}</charset>
+            <pattern>[%date{yyyy-MM-dd HH:mm:ss}] [%-5level] [%logger:%line] --%mdc{client} %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 控制台日志配置 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>${logback.charset}</charset>
+            <pattern>${CONSOLE_PATTERN_COLOR}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- info级别日志控制 -->
+    <appender name="FILE_INFO"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 格式化 -->
+        <encoder>
+            <charset>${logback.charset}</charset>
+            <pattern>${CONSOLE_PATTERN}</pattern>
+        </encoder>
+        <!-- 文件路径 -->
+        <file>${logback.path}/${logback.name}.log</file>
+        <!-- 是否追加 默认为true -->
+        <append>true</append>
+        <!-- 滚动策略 日期+大小 策略 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${logback.path}/backup/${logback.name}.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <!-- 单个日志大小 -->
+            <maxFileSize>${logback.maxFileSize}</maxFileSize>
+            <!-- 日志保存周期 -->
+            <maxHistory>${logback.maxHistory}</maxHistory>
+            <!--总大小 用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志-->
+            <totalSizeCap>${logback.totalSizeCap}</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <!-- warn级别日志控制 -->
+    <appender name="WARN_INFO"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 格式化 -->
+        <encoder>
+            <charset>${logback.charset}</charset>
+            <pattern>${CONSOLE_PATTERN}</pattern>
+        </encoder>
+        <!-- 文件路径 -->
+        <file>${logback.path}/${logback.name}.warn.log</file>
+        <!-- 是否追加 默认为true -->
+        <append>true</append>
+        <!-- 滚动策略 日期+大小 策略 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${logback.path}/backup/${logback.name}.warn.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <!-- 单个日志大小 -->
+            <maxFileSize>${logback.maxFileSize}</maxFileSize>
+            <!-- 日志保存周期 -->
+            <maxHistory>${logback.maxHistory}</maxHistory>
+            <!-- 总大小 用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志 -->
+            <totalSizeCap>${logback.totalSizeCap}</totalSizeCap>
+        </rollingPolicy>
+        <!-- 级别过滤 -->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>WARN</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <!-- ERROR级别日志控制 -->
+    <appender name="ERROR_INFO"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 格式化 -->
+        <encoder>
+            <charset>${logback.charset}</charset>
+            <pattern>${CONSOLE_PATTERN}</pattern>
+        </encoder>
+        <!-- 文件路径 -->
+        <file>${logback.path}/${logback.name}.error.log</file>
+        <!-- 是否追加 默认为true -->
+        <append>true</append>
+        <!-- 滚动策略 日期+大小 策略 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>${logback.path}/backup/${logback.name}.error.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <!-- 单个日志大小 -->
+            <maxFileSize>${logback.maxFileSize}</maxFileSize>
+            <!-- 日志保存周期 -->
+            <maxHistory>${logback.maxHistory}</maxHistory>
+            <!-- 总大小 用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志 -->
+            <totalSizeCap>${logback.totalSizeCap}</totalSizeCap>
+        </rollingPolicy>
+        <!-- 级别过滤 -->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+
+    <!-- 异步写入 -->
+    <appender name="ASYNC_CONSOLE" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>${logback.queueSize}</queueSize>
+        <discardingThreshold>${logback.discardingThreshold}</discardingThreshold>
+        <appender-ref ref="CONSOLE"/>
+    </appender>
+    <appender name="ASYNC_FILE_INFO" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>${logback.queueSize}</queueSize>
+        <discardingThreshold>${logback.discardingThreshold}</discardingThreshold>
+        <appender-ref ref="FILE_INFO"/>
+    </appender>
+    <appender name="ASYNC_WARN_INFO" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>${logback.queueSize}</queueSize>
+        <discardingThreshold>${logback.discardingThreshold}</discardingThreshold>
+        <appender-ref ref="WARN_INFO"/>
+    </appender>
+    <appender name="ASYNC_ERROR_INFO" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>${logback.queueSize}</queueSize>
+        <discardingThreshold>${logback.discardingThreshold}</discardingThreshold>
+        <appender-ref ref="ERROR_INFO"/>
+    </appender>
+    <appender name="ASYNC_MYBATIS_INFO" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>${logback.queueSize}</queueSize>
+        <discardingThreshold>${logback.discardingThreshold}</discardingThreshold>
+        <appender-ref ref="MYBATIS_INFO"/>
+    </appender>
+
+
+    <!-- 全局过滤第三方包 -->
+    <logger name="com.alibaba.nacos" level="error"/>
+    <!--这个一定要 -->
+    <logger name="com.xiaochao.dao" level="DEBUG"/>
+
+    <!--测试/生产 环境:打印控制台和输出到文件-->
+    <springProfile name="!dev">
+        <root level="${logback.level}">
+            <appender-ref ref="ASYNC_CONSOLE"/>
+            <appender-ref ref="ASYNC_FILE_INFO"/>
+            <appender-ref ref="ASYNC_WARN_INFO"/>
+            <appender-ref ref="ASYNC_ERROR_INFO"/>
+        </root>
+    </springProfile>
+
+    <!--开发环境:只打印控制台-->
+    <!--默认环境:只打印控制台 -->
+    <springProfile name="dev">
+        <root level="${logback.level}">
+            <appender-ref ref="ASYNC_CONSOLE"/>
+            <appender-ref ref="ASYNC_MYBATIS_INFO"/>
+            <appender-ref ref="ASYNC_ERROR_INFO"/>
+        </root>
+    </springProfile>
+
+
+</configuration>

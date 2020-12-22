@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaochao.dao.DesignDao">
+    <resultMap id="design" type="com.xiaochao.modal.Design">
+        <id property="designId" column="design_id"/>
+        <result property="designTitle" column="design_title"/>
+        <result property="grade" column="grade"/>
+        <result property="designDes" column="design_description"/>
+        <result property="startTime" column="start_time"/>
+        <result property="endTime" column="end_time"/>
+        <result property="statue" column="statue"/>
+        <result property="advising" column="advising"/>
+        <result property="review" column="review"/>
+        <result property="replay" column="replay"/>
+        <association property="college" javaType="com.xiaochao.modal.College">
+            <id property="collegeId" column="dept_id"/>
+            <result property="collegeName" column="dept_name"/>
+        </association>
+    </resultMap>
+
+    <select id="getDesignByUserName" resultMap="design">
+        SELECT
+            d.design_id,d.design_title,d.grade,d.design_description,d.start_time,d.end_time,d.statue,d.advising,d.review,d.replay,
+            dept.dept_id,dept.dept_name
+        FROM
+            `user` u,design d,dept
+        WHERE
+            u.id = d.user_id
+          AND dept.dept_id = d.dept_id
+          AND u.username = #{username}
+          AND d.statue=#{statue}
+    </select>
+
+    <select id="getDesign" resultMap="design">
+        select
+               d.design_id,d.design_title,d.grade,d.design_description,d.start_time,d.end_time,d.statue,d.advising,d.review,d.replay,
+               dept.dept_id,dept.dept_name
+        from (design d,user u)
+        left join dept on dept.dept_id=d.dept_id
+        where u.design_id=d.dept_id and u.id=#{userId}
+    </select>
+
+    <insert id="insertDesign" useGeneratedKeys="true" keyProperty="designId">
+        insert into
+            design( design_title,grade, design_description, start_time, end_time, statue, dept_id, advising, review, replay,user_id)
+            VALUE (#{design.designTitle},#{design.grade},#{design.designDes},#{design.startTime},#{design.endTime},#{design.statue},#{design.college.collegeId},#{design.advising},#{design.review},#{design.replay},#{design.userId})
+    </insert>
+
+    <update id="updateDesign" parameterType="com.xiaochao.modal.Design">
+        update design
+        <set>
+            <if test="#{designTitle} != null">design_title=#{designTitle},</if>
+            <if test="#{grade} != null">grade=#{grade},</if>
+            <if test="#{designDes} !=null">design_description=#{designDes},</if>
+            <if test="#{startTime} !=null">start_time=#{startTime},</if>
+            <if test="#{endTime} !=null">end_time=#{endTime},</if>
+            <if test="#{statue} !=null">statue=#{statue},</if>
+            <if test="#{advising} !=null">advising=#{advising},</if>
+            <if test="#{review} !=null">review=#{review},</if>
+            <if test="#{replay} !=null">replay=#{replay},</if>
+            <if test="#{college} !=null">dept_id=#{college.collegeId}</if>
+        </set>
+        where design_id=#{designId}
+    </update>
+
+
+</mapper>

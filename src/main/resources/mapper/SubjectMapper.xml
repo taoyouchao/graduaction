@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaochao.dao.SubjectDao">
+    <resultMap id="subject" type="com.xiaochao.modal.Subject">
+        <id property="subjectId" column="subject_id"/>
+        <result property="subTitle" column="sub_title"/>
+        <result property="adviserId" column="adviser_id"/>
+        <result property="adviserName" column="nick_name"/>
+        <result property="description" column="discription"/>
+        <result property="level" column="level"/>
+        <result property="designId" column="design_id"/>
+        <result property="checked" column="checked"/>
+        <result property="studentId" column="student_id"/>
+        <association property="search" javaType="com.xiaochao.modal.Search">
+            <result property="searchId" column="search_id"/>
+            <result property="searchType" column="search_type"/>
+        </association>
+    </resultMap>
+
+    <select id="getAllSubject" resultMap="subject">
+        select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id,
+               sh.search_id,sh.search_type,
+               u.nick_name
+        from subject sb,search sh,user u
+        where sb.search_id=sh.search_id and u.id=sb.adviser_id and sb.design_id=#{designId}
+    </select>
+
+    <select id="getSubByAdviser" resultMap="subject">
+        select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id,
+               sh.search_id,sh.search_type,
+               u.nick_name
+        from subject sb,search sh,user u
+        where sb.search_id=sh.search_id and sb.adviser_id=#{adviserId} and sb.design_id=#{designId}
+    </select>
+
+    <select id="getMaxStudent" resultType="int">
+        select u.max_stu from user u where u.id=#{teacherId};
+    </select>
+
+    <insert id="insertSubject" >
+        insert into subject(adviser_id, sub_title, search_id, discription, level, design_id)
+        VALUE (#{adviserId},#{subTitle},#{search.searchId},#{description},#{level},#{designId})
+    </insert>
+
+    <select id="getChosed" resultMap="subject">
+        select sb.subject_id,sb.sub_title, sb.discription, sb.level,sb.adviser_id,sb.design_id,sb.checked,sb.student_id,
+               sh.search_id,sh.search_type,
+               u.nick_name
+        from subject sb,search sh,user u
+        where sb.search_id=sh.search_id and u.id=sb.adviser_id and sb.student_id=#{stuId}
+    </select>
+
+    <update id="updateMaxStu" >
+        update
+            user
+        set max_stu=#{maxStu}
+        where id=#{teacherId};
+    </update>
+
+    <delete id="deleteSubject">
+        delete from subject where subject_id=#{subId}
+    </delete>
+
+    <update id="choseSubject">
+        update
+            subject sub
+        set sub.student_id=#{stuId},sub.checked=1
+        where sub.subject_id=#{subId};
+    </update>
+
+    <update id="updateChose">
+        update
+            subject sub
+        set sub.checked=0,sub.student_id=null
+        where sub.student_id=#{stuId};
+    </update>
+
+
+
+</mapper>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaochao.dao.GroupDao">
+    <resultMap id="group" type="com.xiaochao.modal.Group">
+        <id property="groupId" column="group_id"/>
+        <result property="groupNumber" column="group_number"/>
+        <association property="search" javaType="com.xiaochao.modal.Search">
+            <id property="searchId" column="search_id"/>
+            <result property="searchType" column="search_type"/>
+        </association>
+    </resultMap>
+    <insert id="insertGroup" >
+        insert into `group`(search_id) VALUE(#{searchId})
+    </insert>
+
+    <select id="countGroup" resultType="int" parameterType="int">
+        select count(*) from `group` where design_id = #{designId}
+    </select>
+
+<!--    获取学生的研究方向-->
+    <resultMap id="SearchMap" type="com.xiaochao.modal.Search">
+        <id column="search_id" property="searchId" />
+        <result column="search_type" property="searchType" />
+    </resultMap>
+    <select id="getSearchBysId" parameterType="int" resultMap="SearchMap">
+        select * from search sea where sea.search_id =
+        (select sub.search_id from `subject` sub where sub.student_id = 4 );
+    </select>
+
+<!--    获取学生指导教师-->
+    <select id="getTeacherBysId" parameterType="int" resultType="com.xiaochao.vo.VoAdviser">
+        select u.id, u.username, u.nick_name from user u where u.id =
+        (select sub.adviser_id from `subject` sub WHERE sub.student_id = 4)
+    </select>
+
+<!--获取所有参加答辩的学生-->
+    <select id="getAllStudent" resultType="com.xiaochao.vo.VoStudent" parameterType="int">
+        select u.id, u.username, u.nick_name from user u where u.id in (
+        select ur.user_id from user_role ur where ur.role_id = 3) and u.enabled = 1 and u.design_id = #{designId};
+    </select>
+
+    <select id="getTeacherSubject" resultType="int" parameterType="long">
+        select count(*) from `subject` s where s.adviser_id = #{teacherId}
+    </select>
+
+    <select id="subjectIds" resultType="int" parameterType="int">
+        select s.subject_id from `subject` s where s.design_id = #{designId};
+    </select>
+
+    <update id="updSubBy" >
+        update `subject` set student_id = #{studentId}, checked = 1 where subject_id = #{subjectId}
+    </update>
+
+    <resultMap id="TeacherMap" type="com.xiaochao.modal.Teacher">
+        <result column="id" property="id" />
+        <result column="max_stu" property="maxStu"/>
+    </resultMap>
+
+    <select id="getTeachersByDesignId" resultMap="TeacherMap" parameterType="int">
+        select u.id, u.max_stu from user u WHERE u.id in
+        (select ur.user_id from user_role ur WHERE ur.role_id = 2) and u.design_id = #{designId} and u.max_stu is not NULL
+    </select>
+
+<!--    获取当前已选题数-->
+    <select id="countAllSelect" resultType="int" parameterType="int">
+        select count(*) from subject where checked = 1;
+    </select>
+</mapper>

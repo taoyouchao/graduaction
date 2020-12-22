@@ -18,15 +18,11 @@
     </select>
 
 <!--    获取学生的研究方向-->
-<<<<<<< HEAD
     <resultMap id="SearchMap" type="com.xiaochao.modal.Search">
         <id column="search_id" property="searchId" />
         <result column="search_type" property="searchType" />
     </resultMap>
     <select id="getSearchBysId" parameterType="int" resultMap="SearchMap">
-=======
-    <select id="getSearchBysId" parameterType="int" resultType="com.xiaochao.modal.Search">
->>>>>>> 5408a1b33b5a424e73bc6a88c85742c6d4d6a2a3
         select * from search sea where sea.search_id =
         (select sub.search_id from `subject` sub where sub.student_id = 4 );
     </select>
@@ -52,11 +48,7 @@
     </select>
 
     <update id="updSubBy" >
-<<<<<<< HEAD
         update `subject` set student_id = #{studentId}, checked = 1 where subject_id = #{subjectId}
-=======
-        update `subject` set student_id = #{studentId} where subject_id = #{subjectId}
->>>>>>> 5408a1b33b5a424e73bc6a88c85742c6d4d6a2a3
     </update>
 
     <resultMap id="TeacherMap" type="com.xiaochao.modal.Teacher">
@@ -68,12 +60,9 @@
         select u.id, u.max_stu from user u WHERE u.id in
         (select ur.user_id from user_role ur WHERE ur.role_id = 2) and u.design_id = #{designId} and u.max_stu is not NULL
     </select>
-<<<<<<< HEAD
 
 <!--    获取当前已选题数-->
     <select id="countAllSelect" resultType="int" parameterType="int">
         select count(*) from subject where checked = 1;
     </select>
-=======
->>>>>>> 5408a1b33b5a424e73bc6a88c85742c6d4d6a2a3
 </mapper>

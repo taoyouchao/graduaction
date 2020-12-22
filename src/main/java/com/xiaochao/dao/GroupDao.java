@@ -55,9 +55,8 @@ public interface GroupDao {
     void updSubBy(@Param("studentId") Long sId, @Param("subjectId") Integer subId);
 
     List<Teacher> getTeachersByDesignId(int designId);
-<<<<<<< HEAD
+
 
     int countAllSelect(int designId);
-=======
->>>>>>> 5408a1b33b5a424e73bc6a88c85742c6d4d6a2a3
+
 }

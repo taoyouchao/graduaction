@@ -41,21 +41,6 @@
           and sub.adviser_id=#{adviserId}
     </select>
 
-    <select id="getStuInfo" resultMap="subStuInfo">
-        select sub.student_id ,sub.subject_id,sub.sub_title,sub.level,sub.subject_statue,sub.adviser_grade,sub.review_grade,sub.reply_grade,
-               u.nick_name,
-               m.major_id,m.major_name,
-               d.dept_id,d.dept_name,
-               s.search_id,s.search_type
-        from subject sub ,user u,major m,dept d,search s
-        where
-            sub.student_id=u.id
-          and u.major_id=m.major_id
-          and m.depart_id=d.dept_id
-          and sub.search_id=s.search_id
-          and sub.subject_id=#{subjectId}
-    </select>
-
 
     <update id="upAdviser">
         update subject sub set sub.adviser_grade=#{adviserGrade} where sub.student_id=#{studentId}

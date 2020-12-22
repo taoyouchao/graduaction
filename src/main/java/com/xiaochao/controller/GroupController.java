@@ -3,10 +3,7 @@ package com.xiaochao.controller;
 import com.xiaochao.modal.Group;
 import com.xiaochao.service.GroupService;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -42,8 +39,8 @@ public class GroupController {
     }
 
     @ApiOperation("获取所有分组")
-    @GetMapping("/all_group/{id}")
-    public List<Group> getAllGroup(@PathVariable("id") Integer id) {
+    @GetMapping("/all_group")
+    public List<Group> getAllGroup(@RequestParam("id") Integer id) {
         return groupService.getAllDataGroup(id);
     }
 

@@ -5,7 +5,7 @@
         <id property="ruleId" column="rule_id"/>
         <result property="ruleDes" column="rule_descrip"/>
         <result property="grade" column="grade"/>
-        <result property="designId" column="design_id"/>
+        <result property="designId" column="designId"/>
     </resultMap>
 
     <insert id="upRule" >

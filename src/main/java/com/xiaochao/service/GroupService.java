@@ -1,10 +1,7 @@
 package com.xiaochao.service;
 
 import com.xiaochao.dao.GroupDao;
-import com.xiaochao.modal.Group;
-import com.xiaochao.modal.Search;
-import com.xiaochao.modal.Subject;
-import com.xiaochao.modal.Teacher;
+import com.xiaochao.modal.*;
 import com.xiaochao.utils.ResultMap;
 import com.xiaochao.vo.VoAdviser;
 import com.xiaochao.vo.VoStudent;
@@ -122,8 +119,40 @@ public class GroupService {
             review(v, groups, 3);
         }
 
-        // 5. 分配 学生 与教师的评审关系 （平均分配 例如 一个组 20 个学生 3 个答辩老师  6 7 7）
+        // 将数据持久化到数据库中
+        for (Group group : groups) {
+            System.out.println("开始保存数据： " + group.getGroupNumber() + "\n" + "指导教师"+ group.getAdvisers() + "\n" +"答辩教师" + group.getReviews());
+            // 插入小组
+            groupDao.insertGroup2(group.getGroupNumber(), group.getSearch().getSearchId(), designId);
 
+            List<VoAdviser> advisers = group.getAdvisers();
+            // 插入指导教师
+            for (VoAdviser adviser : advisers) {
+                groupDao.insertGroupAdviser(new GroupAdviser(group.getGroupNumber(), adviser.getId().longValue(), designId));
+
+            }
+
+            // 插入 答辩教师
+            List<VoAdviser> replies = group.getReviews();
+            for (VoAdviser reply : replies) {
+                groupDao.insertGroupReply(new GroupReply(group.getGroupNumber(), reply.getId().longValue(), designId));
+            }
+
+            // 插入学生
+            // 每个 答辩老师 平均评审一组的学生
+            List<VoStudent> s = group.getStudents();
+
+            int index = 0;
+
+            for (VoStudent v : s) {
+
+                groupDao.insertGroupStudentReview(new GroupStudentReview(v.getId().longValue(),
+                        replies.get(index).getId().longValue(), designId));
+                index = (index + 1) % replies.size();
+            }
+        }
+
+        // 5. 分配 学生 与教师的评审关系 （平均分配 例如 一个组 20 个学生 3 个答辩老师  6 7 7）
         return ResultMap.setResult("200", groups, "分组");
 
     }
@@ -198,6 +227,7 @@ public class GroupService {
     private void review(VoAdviser t, LinkedList<Group> groups, int nDefaultReview) {
         // 从头到尾
         boolean isAdd = false;
+        Group questionGroup = null;
         for (Group group : groups) {
             // 首先获取本组的指导教师
             // 排除掉本组的指导教师
@@ -220,14 +250,21 @@ public class GroupService {
                 // 如果这一组的评审老师 已经超过了 默认的值 则直接放到下一组
                 if(reviews.size() <= nDefaultReview) {
                     reviews.add(t);
+                    group.setReviews(reviews);
                     isAdd = true;
                 }
 
+            }else {
+                // 该老师没有被分配
+                // 该组没有添加
+                questionGroup = group;
             }
         }
 
         if(!isAdd) {
             // throw new ArithmeticException("该老师： " + t.toString() + "无法分配");
+            //System.out.println("该组的所有指导老师为： " + questionGroup.getAdvisers());
+
             System.out.println("该老师： " + t.toString() + "无法分配");
         }
     }
@@ -323,5 +360,12 @@ public class GroupService {
 
 
     }
+
+    public List<Group> getAllDataGroup(Integer designId) {
+
+        return groupDao.findAllGroup(designId);
+    }
+
+
 
 }
